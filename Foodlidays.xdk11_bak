@@ -1,12 +1,12 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "1.1",
     "creationData": {
       "type": "App Designer",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "187e8080-f598-42b1-bd16-4c8c7a8ffe46",
-      "lastModifiedDate": 1427063948736,
+      "lastModifiedDate": 1423318605814,
       "creationDate": 1423318605757
     },
     "XDK-app-designer": "true",
@@ -14,7 +14,22 @@
     "startFile": "index.html",
     "projectFiles": {},
     "projectDirectories": {},
-    "libraries": [],
+    "libraries": [
+      {
+        "name": "Cordova",
+        "version": "2.9.0",
+        "data": {
+          "default": true
+        }
+      },
+      {
+        "name": "intelXDK",
+        "version": "4.0.0",
+        "data": {
+          "default": true
+        }
+      }
+    ],
     "serviceMethods": [],
     "cordovaPluginsDirectory": "plugins",
     "cordovaPlugins": [
@@ -46,16 +61,12 @@
         "isActive_": true,
         "appName_": "Foodlidays",
         "appID_": "xdk.intel.ad.template",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": "*",
         "icons_": [],
         "splashes_": [],
+        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
         "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
@@ -75,18 +86,14 @@
         "isActive_": true,
         "appName_": "Foodlidays",
         "appID_": "xdk.intel.ad.template",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": "*",
         "icons_": [],
         "splashes_": [],
+        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
         "cordovaCLIVersion_": "3.5",
-        "crosswalkVersion_": "10",
+        "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
         "appDescription_": "Template to develop a cross-platform mobile app using the App Designer UI editor.",
         "appAuthor_": "",
@@ -103,16 +110,12 @@
         "isActive_": true,
         "appName_": "Foodlidays",
         "appID_": "xdk.intel.ad.template",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": "*",
         "icons_": [],
         "splashes_": [],
+        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
         "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
@@ -129,16 +132,31 @@
         "isActive_": true,
         "appName_": "Foodlidays",
         "appID_": "xdk.intel.ad.template",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": "*",
         "icons_": [],
         "splashes_": [],
+        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "cordovaCLIVersion_": "3.5",
+        "crosswalkVersion_": "stable",
+        "appVersion_": "0.0.0.1",
+        "appDescription_": "Template to develop a cross-platform mobile app using the App Designer UI editor."
+      },
+      "WindowsPhone8": {
+        "platform_": "wp8",
+        "runtime_": "Cordova 3.x",
+        "name_": "WindowsPhone8",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "Foodlidays",
+        "appID_": "xdk.intel.ad.template",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
         "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "stable",
         "appVersion_": "0.0.0.1",

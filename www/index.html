@@ -3,31 +3,23 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Foodlidays version webApp</title>
+        <title>Foodlidays WebApp</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        
+        <!-- to hide search bar -->
         <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+         <!-- if zoom available : user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
 
-        <style>
-            /* following three (cascaded) are equivalent to above three meta viewport statements */
-            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
-            /* see http://dev.w3.org/csswg/css-device-adapt/ */
-                @-ms-viewport { width: 100vw ; zoom: 100% ; }                           @viewport { width: 100vw ; zoom: 100% ; }
-                @-ms-viewport { user-zoom: fixed ; }                                    @viewport { user-zoom: fixed ; }
-                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
-        </style>
-
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="manifest" href="manifest.json">
+         <link rel="manifest" href="manifest.webapp">
+        <link rel="icon" sizes="192x192" href="images/true_logo_carre.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/app.css" type="text/css" media="screen" /> 
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-        <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
-        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <!-- Most third-party libraries should go here. References (below) are just examples to give you the general idea... -->
-        <!-- <script src="lib/mc/hammer.js"></script> -->
-        <!-- <script src="lib/ft/fastclick.js"></script> -->
+        
         <script src="intelxdk.js"></script>
         <script src="cordova.js"></script>
         <script src="xhr.js"></script>
@@ -35,18 +27,19 @@
         <script src="js/init-app.js"></script>
         <script src="xdk/init-dev.js"></script>
     </head>
-
+    
+    <!-- *************************************** BODY ******************************************* -->
+    
     <body>
-        <div class="upage vertical-col left" id="mainpage">
-
-            <div class="widget uib_w_1" data-uib="media/img" data-ver="0">
-                <figure class="figure-align">
-                    <img src="images/bg_food.jpg">
-
-                    <figcaption data-position="bottom"></figcaption>
-                </figure>
-            </div>
+        
+        <div class="header"> 
+            <img src="images/truelogofull.png"> 
         </div>
+        
+        <div class="info" >
+            WebApp Foodlidays en création 
+        </div>
+        
     </body>
 
 </html>

@@ -1,35 +1,51 @@
-/* Disable certain interactions on touch devices */
-body 
-{
+body {
+    /* Disable certain interactions on touch devices */
     -webkit-touch-callout: none ;
     -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
     -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
     -webkit-highlight: none ;
     -webkit-tap-highlight-color: rgba(0,0,0,0) ;
     -webkit-tap-highlight-color: transparent ;
-}
-
-html 
-{
-    -ms-touch-action: pan-x ;
-}
-
-body 
-{
     -ms-touch-action: pan-y ;
     -ms-content-zooming: none ;
 }
-
+html {
+    -ms-touch-action: pan-x ;
+}
 /* allow copy-paste */
-input, textarea  
-{
+input, textarea  {
     -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
 }
 
+/***************************************************************************************/
+
 body
 {
-    background-image: url("images/bg_food.jpg");
-    background-attachment: fixed;
-    background-size: 100%;
-    color: black ;
+    background-image: url(../images/bg_food.jpg);
+    background-size: cover;
+}
+
+.header
+{
+    margin-top: 25px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header img
+{
+    width: 100%
+}
+
+.info
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    color: white;
+    font-size: 18px;
+    font-family: serif;
+    text-align: center;
+    margin-top: 50px;
 }
