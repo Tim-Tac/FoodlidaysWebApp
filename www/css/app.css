@@ -22,7 +22,7 @@ input, textarea  {
 body
 {
     background-image: url(../images/bg_food.jpg);
-    background-size: cover;
+    background-size: cover; 
 }
 
 .header
