@@ -22,7 +22,14 @@ input, textarea  {
 body
 {
     background-image: url(../images/bg_food.jpg);
-    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+    
 }
 
 .header
@@ -47,5 +54,19 @@ body
     font-size: 18px;
     font-family: serif;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 50%;
+    background: rgb(54, 25, 25);
+    background-color: rgba(127,127,127,0.6);
+}
+
+.info2
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    color: white;
+    font-size: 22px;
+    font-family: serif;
+    text-align: center;
+    margin-top: 70%;
 }

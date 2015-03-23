@@ -7,9 +7,9 @@
     
     "icons": 
     {
-        "src": "www/images/true_logo_carre.png",
+        "src": "www/images/favicon.png",
         "sizes": "192x192",
-        "type": "image/jpg",
+        "type": "image/png",
     },
     
     "start_url": "index.html",
