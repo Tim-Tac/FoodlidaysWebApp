@@ -44,29 +44,3 @@ body
 {
     width: 100%
 }
-
-.info
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    color: white;
-    font-size: 18px;
-    font-family: serif;
-    text-align: center;
-    margin-top: 50%;
-    background: rgb(54, 25, 25);
-    background-color: rgba(127,127,127,0.6);
-}
-
-.info2
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    color: white;
-    font-size: 22px;
-    font-family: serif;
-    text-align: center;
-    margin-top: 70%;
-}
