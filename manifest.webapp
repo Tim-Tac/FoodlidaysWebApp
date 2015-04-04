@@ -1,7 +1,7 @@
 {
     "name": "Foodlidays WebApp",
     
-    "version": "0.1",
+    "version": "0.1.2",
     
     "description": "this is the web app for Foodlidays",
     
@@ -9,23 +9,23 @@
     {
         "src": "www/images/FoodlidaysLogoCarre.png",
         "sizes": "192x192",
-        "type": "image/png",
+        "type": "image/png"
     },
     
     "start_url": "index.html",
     
     "display": "standalone",
     
-    "orientation": "portrait",
+    "orientation": [ "portrait-primary" ],
     
     "developer": 
     {
-        "name": "Your Name",
-        "url": "http://yourawesomeapp.com"
+        "name": "Deprince Timothy",
+        "url": "http://innervisiongroup.com"
     },
     
     "default_locale": "fr",
     
-    "fullscreen": true
+    "fullscreen": "true"
     
 }

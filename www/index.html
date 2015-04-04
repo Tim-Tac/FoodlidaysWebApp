@@ -6,15 +6,14 @@
         <title>Foodlidays WebApp</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         
-        <!-- to hide search bar -->
+        <!-- to hide search bar (chrome) -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
          <!-- if zoom available : user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <link rel="manifest" href="manifest.json">
-        <link rel="manifest" href="manifest.webapp">
+        <link rel="manifest" href="../manifest.webapp">
         <link rel="icon" sizes="192x192" href="images/FoodlidaysLogoCarre.png">
         <link rel="apple-touch-icon" href="images/FoodlidaysLogoCarre.png">
         <link rel="stylesheet" href="css/app.css" type="text/css" media="screen" /> 
@@ -33,8 +32,29 @@
     <body>
         
         <div class="header"> 
-            <img src="images/truelogofull.png"> 
+            <img src="images/truelogofull.png">
         </div>
+        
+        <div align="center">
+            <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre email">
+            <input class="pwd_log_in" type=password id="input_pwd" placeholder="Entrez votre mot de passe">
+            <input class="valid_log_in" type="submit" value="Valider" onclick="ManageForm()">
+        </div>
+        
+        <script>
+        function ManageForm()
+        {
+            if((document.getElementById("input_email").value == "") || (document.getElementById("input_pwd").value == ""))
+            {
+                $msg = "All fields are required";
+            }
+            else 
+            {
+                $msg = "Connexion pas encore dispo";
+            }
+            alert($msg);
+        }
+        </script>
         
     </body>
 
