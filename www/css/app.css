@@ -29,7 +29,6 @@ body
     -moz-background-size: cover;    /* Mozilla*/
     -o-background-size: cover;      /* Opera*/
     background-size: cover;         /* Generic*/
-    
 }
 
 .header
@@ -54,7 +53,7 @@ body
     background-color: rgba(255,255,255,0.8);
 }
 
-.pwd_log_in
+.room_log_in
 {
     margin-top: 30px;
     height: 30px;
@@ -65,13 +64,14 @@ body
 
 .valid_log_in
 {
-    margin-top: 60px;
+    margin-top: 90px;
     height: 40px;
     width: 60%;
     background-color: rgba(128,128,128,0.8);
 }
 
-.div_center
+.error
 {
-    text-align: center;
+    text-color : red;
+    text-size : 22px;
 }
