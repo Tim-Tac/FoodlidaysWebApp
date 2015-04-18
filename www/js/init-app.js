@@ -14,11 +14,12 @@ window.app = window.app || {} ;         // there should only be one of these...
 
 
 // Set to "true" if you want the console.log messages to appear.
+app.LOG = true;
 
-app.LOG = false ;
-
-app.consoleLog = function() {           // only emits console.log messages if app.LOG != false
-    if( app.LOG ) {
+app.consoleLog = function() 
+{           
+    if( app.LOG ) 
+    {
         var args = Array.prototype.slice.call(arguments, 0) ;
         console.log.apply(console, args) ;
     }
@@ -32,7 +33,8 @@ app.consoleLog = function() {           // only emits console.log messages if ap
 
 // NOTE: Customize this function to initialize your application, as needed.
 
-app.initEvents = function() {
+app.initEvents = function() 
+{
     "use strict" ;
     var fName = "app.initEvents():" ;
     app.consoleLog(fName, "entry") ;
@@ -68,8 +70,8 @@ app.initEvents = function() {
     // NOTE: ...you can put other miscellaneous init stuff in this function...
     // NOTE: ...and add whatever else you want to do now that the app has started...
 
-    app.initDebug() ;           // just for debug, not required; keep it if you want it or get rid of it
-    app.hideSplashScreen() ;    // after init is good time to remove splash screen; using a splash screen is optional
+    //app.initDebug() ;           // just for debug, not required; keep it if you want it or get rid of it
+    //app.hideSplashScreen() ;    // after init is good time to remove splash screen; using a splash screen is optional
 
     // app initialization is done
     // app event handlers are ready
@@ -113,7 +115,8 @@ app.initDebug = function() {
 // Using a splash screen is optional. This function will not fail if none is present.
 // This is also a simple study in the art of multi-platform device API detection.
 
-app.hideSplashScreen = function() {
+app.hideSplashScreen = function() 
+{
     "use strict" ;
     var fName = "app.hideSplashScreen():" ;
     app.consoleLog(fName, "entry") ;

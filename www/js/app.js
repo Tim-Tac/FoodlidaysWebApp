@@ -2,7 +2,7 @@
 
 function ManageForm()
 {
-    if((document.getElementById("input_email").value == "") || (document.getElementById("input_room").value == ""))
+    if((document.getElementById("input_email").value === "") || (document.getElementById("input_room").value === ""))
     {
         alert("nok");
     }

@@ -31,17 +31,17 @@
     
     <!-- *************************************** BODY ******************************************* -->
     
-    <body onload="window.scrollTo(0, 1);">
+    <body>
         
         <div class="header"> 
             <img src="images/truelogofull.png">
         </div>
         
         <div align="center">
-            <form method="post">
+            <form method="post" onsubmit="ManageForm()">
             <input class="room_log_in" type=text id="input_room" placeholder="Entrez votre identifiant de chambre">
             <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre mot de passe">
-            <input class="valid_log_in" type="submit" value="Valider" onclick="ManageForm()">
+            <input class="valid_log_in" type="submit" value="Valider">
             </form>
         </div>
         
