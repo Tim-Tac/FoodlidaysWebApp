@@ -1,8 +1,6 @@
-// This file contains event handlers, the center of your application.
-
-function ManageForm()
+function ManageForm(form)
 {
-    if((document.getElementById("input_email").value === "") || (document.getElementById("input_room").value === ""))
+    if((form.getElementById("input_email").value === "") || (form.getElementById("input_room").value === ""))
     {
         alert("nok");
     }
