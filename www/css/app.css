@@ -1,4 +1,5 @@
-body {
+body 
+{
     /* Disable certain interactions on touch devices */
     -webkit-touch-callout: none ;
     -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
@@ -9,11 +10,14 @@ body {
     -ms-touch-action: pan-y ;
     -ms-content-zooming: none ;
 }
-html {
+html
+{
     -ms-touch-action: pan-x ;
 }
+
 /* allow copy-paste */
-input, textarea  {
+input, textarea  
+{
     -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
 }
 
