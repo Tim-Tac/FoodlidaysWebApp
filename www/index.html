@@ -30,20 +30,17 @@
         <script src="js/app.js"></script>
         <script src="js/init-app.js"></script>
         <script src="xdk/init-dev.js"></script>
-    </head>
+        
+            <!-- ******************************************************* FUNCTIONS TO CALL ******************************************************************* -->
     
-    <!-- ******************************************************* FUNCTIONS TO CALL ******************************************************************* -->
-    
-    <script>
+    <script type="text/javascript" language="javascript">
+        
         function ManageForm()
         {
             var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
             if(formOK)
             {
                 alert("ok");
-                //TryToConnect(document.getElementById('input_email').value, document.getElementById('input_room'));
-                
-                var jqWHR = jQuery.post
                 
                 $.post("http://foodlidays.dev.innervisiongroup.com/api/v1/login",
                        {
@@ -58,13 +55,30 @@
             }
             else alert("Both fields are required");
         }
-
-        $("valid").click(function() {
-            alert("pousser");
+        
+        
+        $(document).ready(function() 
+        {
+            $("#valid").click(function(event)
+            {
+				    $.post(
+                        "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
+                        { 
+                            email : "titidep001@hotmail.com",
+                            room_number : "50NG13HS" 
+                        },
+                        function(data) 
+                        {
+                            $('#res').html(data);
+                            alert(data.place_type);
+                        },"json"
+                    );		
+            });
         });
         
         
     </script>
+    </head>
     
     <!-- *********************************************************************** BODY ******************************************************************** -->
     
@@ -80,8 +94,10 @@
         <input class="valid_log_in" type="submit" value="Valider">
         </form>
         
-        <button value="valid" id="valid"  name="valid" >test</button>
-        
+        <input type="button" value="valid" id="valid"  name="valid" > valid </button>
+        <div id="res">
+        WAIT
+        </div>        
     </body>
     
 </html>
