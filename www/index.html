@@ -23,45 +23,16 @@
         <!-- include scripts -->
         <script src="intelxdk.js"></script>
         <script src="cordova.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
+        <script src="jquery.js"></script>
         <script src="xhr.js"></script>
         <script src="js/app.js"></script>
         <script src="js/init-app.js"></script>
         <script src="xdk/init-dev.js"></script>
     </head>
-
     
     <!-- ******************************************************* FUNCTIONS TO CALL ******************************************************************* -->
-    
-    <script>
-    function TryToConnect(email, room) 
-    {
-        method = "post";
-
-        var form = document.createElement("form");
-        form.setAttribute("method", method);
-        form.setAttribute("action", "une_url");
-
-        //set room
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden");
-        hiddenField.setAttribute("name", "room_id");
-        hiddenField.setAttribute("value", room);
-        form.appendChild(hiddenField);
-        
-        //set email
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden");
-        hiddenField.setAttribute("name", "email");
-        hiddenField.setAttribute("value", email);
-        form.appendChild(hiddenField);
-        
-        document.body.appendChild(form);
-        form.submit();
-    }
-    </script>
-
-        <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     
     <script>
         function ManageForm()
@@ -71,6 +42,9 @@
             {
                 alert("ok");
                 //TryToConnect(document.getElementById('input_email').value, document.getElementById('input_room'));
+                
+                var jqWHR = jQuery.post
+                
                 $.post("http://foodlidays.dev.innervisiongroup.com/api/v1/login",
                        {
                             room_number : "50NG13HS",
@@ -80,27 +54,17 @@
                         {
                             alert("data");
                         }, 
-                       "json").done( function(data) {
-                                    alert("Data Loaded: " + data);
-                                    }).fail(function() {
-    alert( "error" );
-  })
-                                   
-                                   ); 
+                       "json"); 
             }
             else alert("Both fields are required");
         }
-    </script>
-    
-    <script>
-        $("valid").click(function){
+
+        $("valid").click(function() {
             alert("pousser");
-            
-        }
+        });
         
         
     </script>
-    
     
     <!-- *********************************************************************** BODY ******************************************************************** -->
     
@@ -116,7 +80,7 @@
         <input class="valid_log_in" type="submit" value="Valider">
         </form>
         
-        <button value="test" id="valid" >test</button>
+        <button value="valid" id="valid"  name="valid" >test</button>
         
     </body>
     
