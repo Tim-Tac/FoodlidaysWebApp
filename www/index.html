@@ -1,50 +1,122 @@
-<!-- DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
-    <!--<head>
+    <head>
         <meta charset="UTF-8">
         <title>Foodlidays WebApp</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         
-        <!-- to hide search bar (chrome and safari ?)
+        <!-- to hide search bar (chrome and safari ?) -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         
-         <!-- if zoom available : user-scalable=yes, minimum-scale=1, maximum-scale=2">
+         <!-- if zoom available : user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         
-        <!-- CSS + manifest +  icon + fullscreen
+        <!-- CSS + manifest +  icon + fullscreen -->
         <link rel="manifest" href="../manifest.webapp">
         <link rel="icon" sizes="192x192" href="images/FoodlidaysLogoCarre.png">
         <link rel="apple-touch-icon" href="images/FoodlidaysLogoCarre.png">
         <link rel="stylesheet" href="css/app.css" type="text/css" media="screen" /> 
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
         
-        <!-- include scripts
+        <!-- include scripts -->
         <script src="intelxdk.js"></script>
         <script src="cordova.js"></script>
+        <script src="jquery-1.11.2.min.js"></script>
         <script src="xhr.js"></script>
         <script src="js/app.js"></script>
         <script src="js/init-app.js"></script>
         <script src="xdk/init-dev.js"></script>
-    </head> -->
-
-    <script > window.location.href="include.html" </script>
+    </head>
 
     
-    <!-- *************************************** BODY ******************************************* -->
+    <!-- ******************************************************* FUNCTIONS TO CALL ******************************************************************* -->
+    
+    <script>
+    function TryToConnect(email, room) 
+    {
+        method = "post";
+
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", "une_url");
+
+        //set room
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "room_id");
+        hiddenField.setAttribute("value", room);
+        form.appendChild(hiddenField);
+        
+        //set email
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "email");
+        hiddenField.setAttribute("value", email);
+        form.appendChild(hiddenField);
+        
+        document.body.appendChild(form);
+        form.submit();
+    }
+    </script>
+
+        <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+    <script>
+        function ManageForm()
+        {
+            var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
+            if(formOK)
+            {
+                alert("ok");
+                //TryToConnect(document.getElementById('input_email').value, document.getElementById('input_room'));
+                $.post("http://foodlidays.dev.innervisiongroup.com/api/v1/login",
+                       {
+                            room_number : "50NG13HS",
+                            email : "titidep001@hotmail.com"
+                        },
+                        function(data, status)
+                        {
+                            alert("data");
+                        }, 
+                       "json").done( function(data) {
+                                    alert("Data Loaded: " + data);
+                                    }).fail(function() {
+    alert( "error" );
+  })
+                                   
+                                   ); 
+            }
+            else alert("Both fields are required");
+        }
+    </script>
+    
+    <script>
+        $("valid").click(function){
+            alert("pousser");
+            
+        }
+        
+        
+    </script>
+    
+    
+    <!-- *********************************************************************** BODY ******************************************************************** -->
     
     <body>
-        
+                
         <div class="header"> 
             <img src="images/truelogofull.png">
         </div>
         
-        <form method="post" onsubmit="ManageForm(this)" action="Target.html">
+        <form method="POST" onsubmit="ManageForm();">
         <input class="room_log_in" type=text id="input_room" placeholder="Entrez votre identifiant de chambre">
         <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre mot de passe">
         <input class="valid_log_in" type="submit" value="Valider">
         </form>
+        
+        <button value="test" id="valid" >test</button>
         
     </body>
     
