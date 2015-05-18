@@ -33,51 +33,33 @@
         
             <!-- ******************************************************* FUNCTIONS TO CALL ******************************************************************* -->
     
-    <script type="text/javascript" language="javascript">
-        
-        function ManageForm()
-        {
-            var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
-            if(formOK)
+        <script type="text/javascript" language="javascript">
+
+            $(document).ready(function() 
             {
-                alert("ok");
-                
-                $.post("http://foodlidays.dev.innervisiongroup.com/api/v1/login",
-                       {
-                            room_number : "50NG13HS",
-                            email : "titidep001@hotmail.com"
-                        },
-                        function(data, status)
-                        {
-                            alert("data");
-                        }, 
-                       "json"); 
-            }
-            else alert("Both fields are required");
-        }
-        
-        
-        $(document).ready(function() 
-        {
-            $("#valid").click(function(event)
-            {
-				    $.post(
-                        "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
-                        { 
-                            email : "titidep001@hotmail.com",
-                            room_number : "50NG13HS" 
-                        },
-                        function(data) 
-                        {
-                            $('#res').html(data);
-                            alert(data.place_type);
-                        },"json"
-                    );		
+                $("#valid").click(function(event)
+                {
+                    var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
+                    if(formOK)
+                    {
+                            $.post(
+                                    "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
+                                    {  email : "titidep001@hotmail.com", //a remplacer par les valeurs des champs
+                                        room_number : "50NG13HS" },
+                                    function(data) 
+                                    {     
+                                        $('#res').html(data);
+                                        alert(data.email);
+                                    },
+                                    "json"
+                                );
+                    }
+                    else alert("Both fields are required");
+                });
             });
-        });
-        
-        
-    </script>
+
+
+        </script>
     </head>
     
     <!-- *********************************************************************** BODY ******************************************************************** -->
@@ -88,13 +70,9 @@
             <img src="images/truelogofull.png">
         </div>
         
-        <form method="POST" onsubmit="ManageForm();">
-        <input class="room_log_in" type=text id="input_room" placeholder="Entrez votre identifiant de chambre">
-        <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre mot de passe">
-        <input class="valid_log_in" type="submit" value="Valider">
-        </form>
-        
-        <input type="button" value="valid" id="valid"  name="valid" > valid </button>
+        <p> <input class="room_log_in" type=text id="input_room" placeholder="Entrez votre identifiant de chambre" value="50NG13HS"> </p>
+        <p> <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre mot de passe" value="titidep001@hotmail.com"> </p>
+        <p> <input class="valid_log_in" type="button" value="valid" id="valid"  name="valid"> </p>
         <div id="res">
         WAIT
         </div>        

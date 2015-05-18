@@ -23,18 +23,20 @@ body
     width: 100%
 }
 
-.email_log_in
+.room_log_in
 {
-    margin-top: 50px;
+    text-align: center;
+    margin-top: 30px;
     height: 30px;
     width: 60%;
     padding: 5px;
     background-color: rgba(255,255,255,0.8);
 }
 
-.room_log_in
+.email_log_in
 {
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 50px;
     height: 30px;
     width: 60%;
     padding: 5px;
@@ -47,4 +49,11 @@ body
     height: 40px;
     width: 60%;
     background-color: rgba(128,128,128,0.8);
+}
+
+p
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
