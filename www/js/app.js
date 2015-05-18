@@ -1,38 +1,24 @@
-/**
-
-function ManageForm(form)
+$(document).ready(function() 
 {
-    if((form.getElementById("input_email").value === "") || (form.getElementById("input_room").value === ""))
+    $("#valid").click(function(event)
     {
-        alert("nok");
-    }
-    else alert("ok");
-}
-
-
-function post(room_number, params, method) 
-{
-    method = method || "post"; // Set method to post by default if not specified.
-
-    var form = document.createElement("form");
-    form.setAttribute("room_number", method);
-    form.setAttribute("email", path);
-
-    for(var key in params) 
-    {
-        if(params.hasOwnProperty(key)) 
+        //var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
+        var formOK = true;
+        if(formOK)
         {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-
-            form.appendChild(hiddenField);
-         }
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-}
-
-**/
+                $.post(
+                        "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
+                        {  email : "titidep001@hotmail.com", //a remplacer par les valeurs des champs
+                            room_number : "50NG13HS" },
+                        function(data) 
+                        {     
+                            //$('#res').html(data); to change text in html page
+                            alert(data.room.street_address);
+                            window.open("main.html");
+                        },
+                        "json"
+                    );
+        }
+        else alert("Both fields are required");
+    });
+});
