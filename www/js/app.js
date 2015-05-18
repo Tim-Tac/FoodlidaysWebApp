@@ -3,8 +3,7 @@ $(document).ready(function()
     /*POST request to try to connect the user*/
     $("#valid").click(function(event)
     {
-        //var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
-        var formOK = true;
+        var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
         if(formOK)
         {
                 $.post(
