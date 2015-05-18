@@ -1,5 +1,6 @@
 $(document).ready(function() 
 {
+    /*POST request to try to connect the user*/
     $("#valid").click(function(event)
     {
         //var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
@@ -21,4 +22,21 @@ $(document).ready(function()
         }
         else alert("Both fields are required");
     });
+});
+
+$(window).on("navigate", function (event, data) {
+  var direction = data.state.direction;
+  if (direction == 'back') {
+    alert("back");
+  }
+  if (direction == 'forward') {
+    // do something else
+  }
+});
+
+$(document).live("pagebeforechange", function(e,ob) {
+    if(ob.toPage && (typeof ob.toPage==="string") && ob.toPage.indexOf('index.html') >= 0) {
+        console.log("blocking the back");
+        e.preventDefault();
+    }
 });
