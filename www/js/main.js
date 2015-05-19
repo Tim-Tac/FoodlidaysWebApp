@@ -1,9 +1,13 @@
 $(document).ready(function() 
 {
+    alert("test");
+    var temp = localStorage.street_address;
+    alert(temp);
+    
     /************MENU CLICK****************/
     $("#menu").click(function(event)
     {
-        alert("menu");
+        $("#container").html("menu");
     });
     
     /************PANIER CLICK****************/
@@ -11,14 +15,14 @@ $(document).ready(function()
     {
         alert("panier");
         $("#container").css('background-image', 'url(../images/home_slide1.png)');
-        $("#container").html("hello");
+        $("#container").html("panier");
     });
     
     /************PROFIL CLICK****************/
     $("#profil").click(function(event)
     {
         alert("profil");
-        $("#container").css('background-color', 'red');
+        $("#container").html("profil");
     });
     
 });

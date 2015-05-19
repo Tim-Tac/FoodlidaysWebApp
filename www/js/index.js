@@ -1,4 +1,4 @@
-$(document).ready(function() 
+$(document).ready(function()
 {
     /*POST request to try to connect the user*/
     $("#valid").click(function(event)
@@ -6,14 +6,16 @@ $(document).ready(function()
         var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
         if(formOK)
         {
+            alert(document.getElementById("input_email").value);
                 $.post(
                         "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
                         {  email : "titidep001@hotmail.com", //a remplacer par les valeurs des champs
                             room_number : "50NG13HS" },
-                        function(data) 
-                        {     
-                            //$('#res').html(data); to change text in html page
+                        function(data)
+                        {
+                            localStorage.street_address = data.room.street_address;
                             alert(data.room.street_address);
+                            window.close;
                             window.open("main.html");
                         },
                         "json"

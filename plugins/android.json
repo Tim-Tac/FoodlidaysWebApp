@@ -8,7 +8,9 @@
     },
     "installed_plugins": {
         "org.apache.cordova.device": {},
-        "org.apache.cordova.splashscreen": {}
+        "org.apache.cordova.camera": {}
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "org.apache.cordova.file": {}
+    }
 }
