@@ -11,19 +11,29 @@ $(document).ready(function()
                         "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
                         {  email : "titidep001@hotmail.com", //a remplacer par les valeurs des champs
                             room_number : "50NG13HS" },
-                        function(data)
+                        function(data, status)
                         {
-                            localStorage.street_address = data.room.street_address;
+                             localStorage.street_address = data.room.street_address;
                             alert(data.room.street_address);
                             window.close;
                             window.open("main.html");
                         },
                         "json"
-                    );
+                    ).fail(function() 
+                    {
+                        alert( "A network error occured, please check your internet connexion" );
+                    });
         }
         else alert("Both fields are required");
     });
 });
+
+
+
+
+
+
+/** Try for disable back button **/
 
 $(window).on("navigate", function (event, data) {
   var direction = data.state.direction;
