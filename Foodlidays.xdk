@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "d035a418-5c4b-4116-85ef-ad7609d67eb6",
-      "lastModifiedDate": 1432134063332,
+      "lastModifiedDate": 1432139022236,
       "creationDate": 1432134063291
     },
     "sourceDirectory": "www",
@@ -29,9 +29,9 @@
         "dependedBy": []
       },
       {
-        "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.5",
-        "selectedState": "Auto",
+        "id": "org.apache.cordova.camera",
+        "version": "0.3.4",
+        "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
@@ -45,13 +45,14 @@
         "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
-          "android-minSdkVersion": "10",
+          "android-minSdkVersion": "14",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "Orientation": "portrait"
         },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "not.yet.specified",
+        "appID_": "foodlidays.com.xdk",
         "appAccess_": [
           {
             "origin": "*"
@@ -64,7 +65,9 @@
         "appVersion_": "0.0.1",
         "appVersionCode_": "1",
         "crosswalkVersion_": "11",
-        "cordovaCLIVersion_": "4.1.2"
+        "cordovaCLIVersion_": "4.1.2",
+        "appDescription_": "Foodlidays version WebApp for hybrid builds",
+        "appAuthor_": "Tim-Tac"
       },
       "Android-Crosswalk": {
         "platform_": "android",
@@ -97,12 +100,13 @@
         "runtime_": "Cordova 3.x",
         "name_": "iOS",
         "preferences_": {
-          "ios-target": "6",
-          "ios-configuration": "adhoc"
+          "ios-target": "8.0",
+          "ios-configuration": "adhoc",
+          "Orientation": "portrait"
         },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "not.yet.specified",
+        "appID_": "foodlidays.com.xdk",
         "appAccess_": [
           {
             "origin": "*"
@@ -114,16 +118,22 @@
         "excludedLibraries_": "",
         "appVersion_": "0.0.1",
         "cordovaCLIVersion_": "4.1.2",
-        "iosProvs_": []
+        "iosProvs_": [],
+        "appDescription_": "Foodlidays version WebApp for hybrid builds",
+        "appAuthor_": "Tim-Tac"
       },
       "Windows8": {
         "platform_": "windows8",
         "runtime_": "Cordova 3.x",
         "name_": "Windows8",
-        "preferences_": {},
+        "preferences_": {
+          "Orientation": "portrait",
+          "windows-publisher-id": "",
+          "windows-publisher-display-name": "innervisiongroup"
+        },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "not.yet.specified",
+        "appID_": "foodlidays.com.xdk",
         "appAccess_": [
           {
             "origin": "*"
@@ -134,7 +144,9 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.0.1",
-        "cordovaCLIVersion_": "4.1.2"
+        "cordovaCLIVersion_": "4.1.2",
+        "appDescription_": "Foodlidays version WebApp for hybrid builds",
+        "appAuthor_": "Tim-Tac"
       },
       "WebApp": {
         "platform_": "webapp",
