@@ -13,6 +13,10 @@ body
     background-size: cover;         /* Generic*/
 }
 
+
+
+
+/********************************** CSS FOR HEADER ********************************/
 .head
 {
     width: 100%;
@@ -92,5 +96,15 @@ body
 
 .container
 {
-    padding: 5px;
+    padding-top: 10px;
 }
+
+
+
+.image_food
+{
+    width: 30%;
+}
+
+
+
