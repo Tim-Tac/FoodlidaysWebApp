@@ -1,3 +1,16 @@
+function checkNetConnection()
+    {
+        jQuery.ajaxSetup({async:false});
+         re="";
+         r=Math.round(Math.random() * 10000);
+         $.get("http://demos.subinsb.com/cdn/dot.png",{subins:r},function(d){
+          re=true;
+         }).error(function(){
+          re=false;
+         });
+         return re;
+    }
+
 $(document).ready(function()
 {
     /*POST request to try to connect the user*/
@@ -6,6 +19,7 @@ $(document).ready(function()
         var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
         if(formOK)
         {
+            if(!checkNetConnection) alert("internet");
             alert(document.getElementById("input_email").value);
                 $.post(
                         "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
@@ -25,7 +39,7 @@ $(document).ready(function()
                     });
         }
         else alert("Both fields are required");
-    });
+    });   
 });
 
 
