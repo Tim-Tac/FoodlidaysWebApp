@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "d035a418-5c4b-4116-85ef-ad7609d67eb6",
-      "lastModifiedDate": 1432139022236,
+      "lastModifiedDate": 1432140471313,
       "creationDate": 1432134063291
     },
     "sourceDirectory": "www",
@@ -65,7 +65,7 @@
         "appVersion_": "0.0.1",
         "appVersionCode_": "1",
         "crosswalkVersion_": "11",
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "3.5",
         "appDescription_": "Foodlidays version WebApp for hybrid builds",
         "appAuthor_": "Tim-Tac"
       },
@@ -76,11 +76,12 @@
         "preferences_": {
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "Orientation": "portrait"
         },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "not.yet.specified",
+        "appID_": "foodlidays.com.xdk",
         "appAccess_": [
           {
             "origin": "*"
@@ -93,7 +94,9 @@
         "appVersion_": "0.0.1",
         "appVersionCode_": "1",
         "crosswalkVersion_": "11",
-        "cordovaCLIVersion_": "4.1.2"
+        "cordovaCLIVersion_": "4.1.2",
+        "appDescription_": "Foodlidays version WebApp for hybrid builds",
+        "appAuthor_": "Tim-Tac"
       },
       "iOS": {
         "platform_": "ios",
@@ -117,7 +120,7 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.1",
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "3.5",
         "iosProvs_": [],
         "appDescription_": "Foodlidays version WebApp for hybrid builds",
         "appAuthor_": "Tim-Tac"
@@ -144,7 +147,7 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.0.1",
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "3.5",
         "appDescription_": "Foodlidays version WebApp for hybrid builds",
         "appAuthor_": "Tim-Tac"
       },
