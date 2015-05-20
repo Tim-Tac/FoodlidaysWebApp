@@ -1,11 +1,15 @@
 $(document).ready(function() 
 {
+    //define Article object
+    var Article = {
+        name : "",
+        quantity : ""
+    };
+    var articles = [];
+    
 
-    
-    
-    
-    
     $("#menu").click();
+    
     
     /*************************************MENU CLICK**************************************/
     $("#menu").click(function(event)
@@ -30,7 +34,8 @@ $(document).ready(function()
     /**********************************PANIER CLICK****************************************/
     $("#panier").click(function(event)
     {
-        $("#container").html("panier");
+        if(articles.length === 0) $("#container").html("panier");
+        else alert("nok");
     });
     
     
