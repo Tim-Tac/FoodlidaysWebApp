@@ -3,12 +3,16 @@ $(document).ready(function()
     $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
     function( data ) 
     {
-        $( "#container" ).html( data );
-        alert( data.length );
+        for(var i = 0 ; i<data.length ; i++)
+        {
+            $( "#container" ).append("<table> <tr> <td>" +  data[i].name + "</td> <td>" + data[i].price + "</td> </tr> </table>");
+        }
     },"json").fail(function() 
     {
         alert( "A network error occured, please check your internet connexion or try again later" );
     });
+    
+    $('#menu').click();
     
     
     
