@@ -26,7 +26,7 @@ $(document).ready(function()
         {
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#container" ).append("<table> <tr> <td>" +  data[i].name + "</td> <td>" + data[i].price + "</td> </tr> </table>");
+                $( "#container" ).append("<table> <tr> <td>" +  data[i].name + "</td> <td>" + data[i].price + "</td> <td> <button> + </button> </td> </tr> </table> ");
             }
         },"json").fail(function() 
         {
@@ -51,5 +51,7 @@ $(document).ready(function()
         just_launched = 0;
         $("#container").html("profil");
     });
+    
+    /**********CLICK PRODUCT + *************/
     
 });

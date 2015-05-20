@@ -11,7 +11,5 @@
         "org.apache.cordova.camera": {},
         "org.apache.cordova.splashscreen": {}
     },
-    "dependent_plugins": {
-        "org.apache.cordova.file": {}
-    }
+    "dependent_plugins": {}
 }

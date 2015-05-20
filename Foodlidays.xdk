@@ -2,67 +2,69 @@
   "project": {
     "projectSettingsVersion": "1.2",
     "creationData": {
-      "type": "App Designer",
+      "type": "Import",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-      "src": "appDesigner",
-      "projectGuid": "187e8080-f598-42b1-bd16-4c8c7a8ffe46",
-      "lastModifiedDate": 1432052817111,
-      "creationDate": 1423318605757
+      "src": "",
+      "projectGuid": "d035a418-5c4b-4116-85ef-ad7609d67eb6",
+      "lastModifiedDate": 1432134063332,
+      "creationDate": 1432134063291
     },
-    "XDK-app-designer": "true",
     "sourceDirectory": "www",
+    "cordovaPluginsDirectory": "plugins",
+    "gameAssetDirectory": "asset",
+    "gameMetadata": {},
     "startFile": "index.html",
+    "projectTags": [],
     "projectFiles": {},
     "projectDirectories": {},
     "libraries": [],
-    "serviceMethods": [],
-    "cordovaPluginsDirectory": "plugins",
     "cordovaPlugins": [
       {
         "id": "org.apache.cordova.device",
-        "version": "0.2.9",
-        "selectedState": "Included",
+        "version": "0.2.13",
+        "selectedState": "Auto",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": []
       },
       {
-        "id": "org.apache.cordova.camera",
-        "version": "0.3.4",
-        "selectedState": "Included",
+        "id": "org.apache.cordova.splashscreen",
+        "version": "0.3.5",
+        "selectedState": "Auto",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": []
       }
     ],
+    "serviceMethods": [],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
         "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
-          "android-minSdkVersion": "14",
+          "android-minSdkVersion": "10",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto",
-          "Orientation": "portrait"
+          "android-installLocation": "auto"
         },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "foodlidays.com.xdk",
-        "appAccess_": [],
+        "appID_": "not.yet.specified",
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "3.5",
-        "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
-        "appDescription_": "Foodlidays version WebApp for hybrid builds",
-        "appAuthor_": "Tim-Tac",
-        "appVersionCode_": "1"
+        "appVersionCode_": "1",
+        "crosswalkVersion_": "11",
+        "cordovaCLIVersion_": "4.1.2"
       },
       "Android-Crosswalk": {
         "platform_": "android",
@@ -75,7 +77,7 @@
         },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "xdk.intel.ad.template",
+        "appID_": "not.yet.specified",
         "appAccess_": [
           {
             "origin": "*"
@@ -85,13 +87,10 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "3.5",
-        "crosswalkVersion_": "10",
         "appVersion_": "0.0.1",
-        "appDescription_": "Template to develop a cross-platform mobile app using the App Designer UI editor.",
-        "appAuthor_": "",
-        "appVersionCode_": "1"
+        "appVersionCode_": "1",
+        "crosswalkVersion_": "11",
+        "cordovaCLIVersion_": "4.1.2"
       },
       "iOS": {
         "platform_": "ios",
@@ -99,12 +98,11 @@
         "name_": "iOS",
         "preferences_": {
           "ios-target": "6",
-          "ios-configuration": "adhoc",
-          "Orientation": "portrait"
+          "ios-configuration": "adhoc"
         },
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "foodlidays.com.xdk",
+        "appID_": "not.yet.specified",
         "appAccess_": [
           {
             "origin": "*"
@@ -114,26 +112,18 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "3.5",
-        "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
-        "appDescription_": "Foodlidays version WebApp for hybrid builds",
-        "appAuthor_": "Tim-Tac",
-        "appVersionCode_": ""
+        "cordovaCLIVersion_": "4.1.2",
+        "iosProvs_": []
       },
       "Windows8": {
         "platform_": "windows8",
         "runtime_": "Cordova 3.x",
         "name_": "Windows8",
-        "preferences_": {
-          "windows-publisher-display-name": "InnerVisionGroup",
-          "windows-publisher-id": "",
-          "Orientation": "portrait"
-        },
+        "preferences_": {},
         "isActive_": true,
         "appName_": "Foodlidays",
-        "appID_": "foodlidays.com.xdk",
+        "appID_": "not.yet.specified",
         "appAccess_": [
           {
             "origin": "*"
@@ -143,12 +133,8 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "3.5",
-        "crosswalkVersion_": "stable",
         "appVersion_": "0.0.0.1",
-        "appDescription_": "Foodlidays version WebApp for hybrid builds",
-        "appAuthor_": "Tim-Tac"
+        "cordovaCLIVersion_": "4.1.2"
       },
       "WebApp": {
         "platform_": "webapp",
@@ -226,9 +212,6 @@
         "excludedLibraries_": "",
         "appVersion_": "0.0.1"
       }
-    },
-    "gameAssetDirectory": "asset",
-    "gameMetadata": {},
-    "projectTags": []
+    }
   }
 }
