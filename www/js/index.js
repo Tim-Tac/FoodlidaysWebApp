@@ -11,11 +11,32 @@ function checkNetConnection()
      return re;
 }
 
+
 $(document).ready(function()
 {
+    
     $("#qr").click(function(event)
     {
-       alert("qr");
+       document.addEventListener("intel.xdk.device.barcode.scan",function(evt)
+        {
+            if (evt.success == true) 
+            {
+                if (evt.codedata == "http://www.sampleurl.com/fake.html")
+                {
+                        //nothing to do
+                }
+                else
+                {
+                    document.getElementById('input_room').value = evt.codedata;
+                }
+            }else 
+            {
+                //failed scan
+                console.log("failed scan");
+            }
+       },false);
+        intel.xdk.device.scanBarcode();
+        
     });
     
     
