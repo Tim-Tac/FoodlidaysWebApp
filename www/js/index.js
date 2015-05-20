@@ -21,7 +21,6 @@ $(document).ready(function()
         {
             if(checkNetConnection)
             {
-                 alert(document.getElementById("input_email").value);
                     $.post(
                         "http://foodlidays.dev.innervisiongroup.com/api/v1/login",
                         {  email : document.getElementById("input_email").value, //a remplacer par les valeurs des champs

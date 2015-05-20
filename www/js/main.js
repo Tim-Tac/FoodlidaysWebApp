@@ -1,12 +1,22 @@
 $(document).ready(function() 
-{
-    var temp = localStorage.street_address;
-    alert(temp);
+{   
+    $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
+    function( data ) 
+    {
+        $( "#container" ).html( data );
+        alert( data.length );
+    },"json").fail(function() 
+    {
+        alert( "A network error occured, please check your internet connexion or try again later" );
+    });
+    
+    
+    
     
     /************MENU CLICK****************/
     $("#menu").click(function(event)
     {
-        $("#container").html("menu");
+        $("#container").html("<h1> test </h1>");
     });
     
     /************PANIER CLICK****************/
