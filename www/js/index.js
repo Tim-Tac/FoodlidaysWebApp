@@ -1,22 +1,22 @@
 function checkNetConnection()
-    {
-        jQuery.ajaxSetup({async:false});
-         re="";
-         r=Math.round(Math.random() * 10000);
-         $.get("http://demos.subinsb.com/cdn/dot.png",{subins:r},function(d){
-          re=true;
-         }).error(function(){
-          re=false;
-         });
-         return re;
-    }
+{
+     jQuery.ajaxSetup({async:false});
+     re="";
+     r=Math.round(Math.random() * 10000);
+     $.get("http://demos.subinsb.com/cdn/dot.png",{subins:r},function(d){
+      re=true;
+     }).error(function(){
+      re=false;
+     });
+     return re;
+}
 
 $(document).ready(function()
 {
     /*POST request to try to connect the user*/
     $("#valid").click(function(event)
     {
-        var formOK = (document.getElementById('input_email').value != "") && (document.getElementById('input_room').value != "")
+        var formOK = (document.getElementById('input_email').value !== "") && (document.getElementById('input_room').value !== "");
         if(formOK)
         {
             if(checkNetConnection)
@@ -28,15 +28,33 @@ $(document).ready(function()
                             room_number : document.getElementById("input_room").value },
                         function(data, status)
                         {
-                             localStorage.street_address = data.room.street_address;
-                            alert(data.room.street_address);
-                            window.close;
+                            localStorage.connected = "true";
+                            localStorage.user_email = data.email;
+                            localStorage.place_type = data.place_type;
+                            localStorage.id = data.room.id;
+                            localStorage.user_id = data.room.user_id;
+                            localStorage.street_address = data.room.street_address;
+                            localStorage.city = data.room.city;
+                            localStorage.country = data.room.country;
+                            localStorage.zip = data.room.zip;
+                            localStorage.room_number = data.room.room_number;
+                            
+                            if(data.place_type == "place")
+                            {
+                                localStorage.name_place = data.room.name;
+                            }
+                            else if(data.place_type == "room")
+                            {
+                                localStorage.floor = data.room.floor;
+                                localStorage.room = data.room.room;
+                            }
+                            
                             window.open("main.html");
                         },
                         "json"
                         ).fail(function() 
                         {
-                            alert( "A network error occured, please check your internet connexion" );
+                            alert( "A network error occured, please check your internet connexion or try again later" );
                         });
             }
             else alert("Internet connexion is required");
@@ -44,7 +62,6 @@ $(document).ready(function()
         else alert("Both fields are required");
     });   
 });
-
 
 
 
