@@ -13,6 +13,13 @@ function checkNetConnection()
 
 $(document).ready(function()
 {
+    $("#qr").click(function(event)
+    {
+       alert("qr");
+    });
+    
+    
+    
     /*POST request to try to connect the user*/
     $("#valid").click(function(event)
     {
@@ -77,6 +84,7 @@ $(window).on("navigate", function (event, data) {
     // do something else
   }
 });
+
 
 $(document).live("pagebeforechange", function(e,ob) {
     if(ob.toPage && (typeof ob.toPage==="string") && ob.toPage.indexOf('index.html') >= 0) {
