@@ -1,5 +1,6 @@
 $(document).ready(function() 
-{   
+{ 
+    var just_launched = 1;
     $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
     function( data ) 
     {
@@ -12,26 +13,25 @@ $(document).ready(function()
         alert( "A network error occured, please check your internet connexion or try again later" );
     });
     
-    $('#menu').click();
-    
-    
-    
     
     /************MENU CLICK****************/
     $("#menu").click(function(event)
     {
+        if(just_launched == 1) return;
         $("#container").html("<h1> test </h1>");
     });
     
     /************PANIER CLICK****************/
     $("#panier").click(function(event)
     {
+        just_launched = 0;
         $("#container").html("panier");
     });
     
     /************PROFIL CLICK****************/
     $("#profil").click(function(event)
     {
+        just_launched = 0;
         $("#container").html("profil");
     });
     
