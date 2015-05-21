@@ -1,5 +1,6 @@
 $(document).ready(function() 
 {
+    if(localStorage.getItem("connected") === null) window.open("login.html");
     
     //define Article object
     var Article = {

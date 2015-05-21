@@ -75,7 +75,7 @@ $(document).ready(function()
                                 localStorage.room = data.room.room;
                             }
                             
-                            window.open("main.html");
+                            window.open("index.html");
                         },
                         "json"
                         ).fail(function() 
