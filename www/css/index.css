@@ -1,8 +1,10 @@
 body
 {
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/bg_food.jpg);
+    background-image: url(../images/home_slide1.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover; /* For WebKit*/
@@ -11,48 +13,94 @@ body
     background-size: cover;         /* Generic*/
 }
 
-.header
+
+
+
+/********************************** CSS FOR HEADER ********************************/
+.head
 {
-    margin-top: 25px;
-    width: 80%;
+    width: 100%;
+    height: 40px;
+}
+
+.menu
+{
+    float: left;
+    background-color: #E3a54e;
+    height: 40px;
+    width: 33%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.header img
-{
-    width: 100%
-}
-
-.room_log_in
-{
     text-align: center;
-    margin-top: 30px;
-    height: 30px;
-    width: 60%;
-    padding: 5px;
-    background-color: rgba(255,255,255,0.8);
 }
 
-.email_log_in
+.menu img
 {
+   margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
-    margin-top: 10px;
     height: 30px;
-    width: 60%;
-    padding: 5px;
-    background-color: rgba(255,255,255,0.8);
+    width: 30px;
 }
 
-.valid_log_in
+.panier
 {
-    margin-top: 100px;
+    float: left;
+    background-color: #E3a54e;
     height: 40px;
-    width: 62%;
-    background-color: rgba(128,128,128,0.8);
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-p
+.panier img
 {
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
+    height: 30px;
+    width: 30px;
+}
+
+.profil
+{
+    float: left;
+    background-color: #E3a54e;
+    height: 40px;
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.profil img
+{
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+}
+
+.separator
+{
+    width: 1%;
+    height: 40px;
+    background-color: #C1832C;
+    float: left;
+}
+
+.container
+{
+    padding: 3%;
+}
+
+
+.image_food
+{
+    width: 30%;
 }

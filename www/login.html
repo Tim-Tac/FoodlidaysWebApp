@@ -17,17 +17,16 @@
         <link rel="manifest" href="../manifest.webapp">
         <link rel="icon" sizes="192x192" href="images/FoodlidaysLogoCarre.png">
         <link rel="apple-touch-icon" href="images/FoodlidaysLogoCarre.png">
-        <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+        <link rel="stylesheet" href="css/login.css" type="text/css" media="screen" /> 
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
         
         <!-- include scripts -->
         <script src="intelxdk.js"></script>
         <script src="cordova.js"></script>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="jquery-1.11.2.min.js"></script>
         <script src="jquery.js"></script>
+        <script src="js/jquery-1.10.2.js"></script>
         <script src="xhr.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/login.js"></script>
         <script src="js/init-app.js"></script>
         <script src="xdk/init-dev.js"></script>    
 
@@ -36,16 +35,16 @@
     <!-- *********************************************************************** BODY ******************************************************************** -->
     
     <body>
-        <div class="head">
-            <div id="menu" class="menu"> <img src="images/pizza-web.png"/> </div>
-            <div class="separator" ></div>
-            <div id="panier" class="panier"> <img src="images/panier-web.png"/> </div>
-            <div class="separator" ></div>
-            <div id="profil" class="profil"> <img src="images/profile-web.png"/> </div>
+                
+        <div class="header"> 
+            <img src="images/truelogofull.png">
         </div>
         
-        <div id="container" class="container">
-        </div>
+        <p> <input class="room_log_in" type=text id="input_room" placeholder="Entrez votre identifiant de chambre" value="50NG13HS"> </p>
+        <p> <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre mot de passe" value="titidep001@hotmail.com"> </p>
+        <p> <img id="qr" src="images/qrcode.jpg"/> </p>
+        <p> <input class="valid_log_in" type="button" value="valid" id="valid"  name="valid"> </p>
+        <div id="res"></div>        
         
     </body>
     

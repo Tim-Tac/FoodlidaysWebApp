@@ -23,8 +23,9 @@
         <!-- include scripts -->
         <script src="intelxdk.js"></script>
         <script src="cordova.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="jquery-1.11.2.min.js"></script>
         <script src="jquery.js"></script>
-        <script src="js/jquery-1.10.2.js"></script>
         <script src="xhr.js"></script>
         <script src="js/index.js"></script>
         <script src="js/init-app.js"></script>
@@ -35,16 +36,16 @@
     <!-- *********************************************************************** BODY ******************************************************************** -->
     
     <body>
-                
-        <div class="header"> 
-            <img src="images/truelogofull.png">
+        <div class="head">
+            <div id="menu" class="menu"> <img src="images/pizza-web.png"/> </div>
+            <div class="separator" ></div>
+            <div id="panier" class="panier"> <img src="images/panier-web.png"/> </div>
+            <div class="separator" ></div>
+            <div id="profil" class="profil"> <img src="images/profile-web.png"/> </div>
         </div>
         
-        <p> <input class="room_log_in" type=text id="input_room" placeholder="Entrez votre identifiant de chambre" value="50NG13HS"> </p>
-        <p> <input class="email_log_in" type=email id="input_email" placeholder="Entrez votre mot de passe" value="titidep001@hotmail.com"> </p>
-        <p> <img id="qr" src="images/qrcode.jpg"/> </p>
-        <p> <input class="valid_log_in" type="button" value="valid" id="valid"  name="valid"> </p>
-        <div id="res"></div>        
+        <div id="container" class="container">
+        </div>
         
     </body>
     
