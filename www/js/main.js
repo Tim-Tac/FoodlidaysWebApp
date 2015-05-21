@@ -21,7 +21,8 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td>" + data[i].name + "</td> <td> " + data[i].note + " </td> <td> price </td> </tr>");
+                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <table> <tr> <td>" + data[i].name + "</td> </tr> <tr> <td> " + data[i].note + " </td> </tr> </table> </td> <td> price </td> </tr>");
+                
             }
         },"json").fail(function() 
         {
@@ -35,7 +36,11 @@ $(document).ready(function()
     $("#panier").click(function(event)
     {
         if(articles.length === 0) $("#container").html("panier");
-        else alert("nok");
+        else 
+        {
+            alert(articles.length);
+            $("#container").html("<h3> Votre panier est vide </h3>");
+        }
     });
     
     
@@ -44,6 +49,8 @@ $(document).ready(function()
     $("#profil").click(function(event)
     {
         $("#container").html("profil");
+        $("#container").css("background-image", "url(../images/home_slide3.png)");
+
     });
     
     
