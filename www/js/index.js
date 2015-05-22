@@ -14,6 +14,8 @@ $(document).ready(function()
     $("#menu").click(function(event)
     {  
         $("#container").html("");
+        //$("body").removeClass("body_bg").addClass("body_bg2");
+        $("body").css('background-color', 'green');
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function( data ) 
@@ -39,6 +41,7 @@ $(document).ready(function()
     $("#panier").click(function(event)
     {
         $("#container").html("");
+        $("body").css('background-color', 'red');
         
         if(articles.length === 0) $("#container").html("<h3 class=\"any_command\" > <i> Votre panier est vide </i> </h3>");
         else 
@@ -48,23 +51,29 @@ $(document).ready(function()
     });
     
     
+    
     /***********************************PROFIL CLICK***************************************/
     $("#profil").click(function(event)
     {
         $("#container").html("");
+        $("body").css('background-color', 'blue');
+        
         $("#container").append("<div class=\"info_profil\"> Identifiant de chambre : " + localStorage.room_number + " </div>");
         $("#container").append("<div class=\"info_profil\"> Votre email : " + localStorage.user_email + " </div> </br>");
         $("#container").append("<div class=\"info_profil\"> Localisation de la chambre : </div>");
         $("#container").append("<div class=\"info_profil\">" + localStorage.street_address + " </div>" );
         $("#container").append("<div class=\"info_profil\">" + localStorage.zip + " " + localStorage.city + " </div>");
         $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
-        $("#container").append("<input type=\"button\" class=\"logout\" id=\"logout\" value=\"Déconnexion\" >");
+        $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
+        
+        $("#logout").click(function(event)
+        {
+            alert("Deconnexion");
+        });
+        
     });
     
-    $("#logout").click(function(event)
-    {
-        alert("ok");
-    });
+
 
     $("#menu").trigger("click");
     
