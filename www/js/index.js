@@ -9,7 +9,6 @@ $(document).ready(function()
     };
     var articles = [];
     
-    $("#menu").click();
     
     /*************************************MENU CLICK**************************************/
     $("#menu").click(function(event)
@@ -72,6 +71,6 @@ $(document).ready(function()
         alert("ok");
     });
 
-    
+    $("#menu").trigger("click");
     
 });
