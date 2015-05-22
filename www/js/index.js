@@ -18,16 +18,23 @@ $(document).ready(function()
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function( data ) 
         {
-            $( "#container" ).append("<table id='productlist'>")
+            $( "#container" ).append("<table id=\"productlist\" >")
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <div>" + data[i].name + "</div><div                       class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
+                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\"> <div>" + data[i].name + "</div><div                       class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
             }
             $( "#container" ).append("</table>");
         },"json").fail(function() 
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
+        });
+        
+        $( "#container" ).click(function( event ) 
+        {
+            var $row = $(this).closest("tr");
+            var $test = $row.find(".to_get").text();
+            alert(JSON.stringify($rows));
         });
     });
     
