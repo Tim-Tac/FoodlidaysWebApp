@@ -4,6 +4,7 @@ body
     margin: 0;
     width: 100%;
     height: 100%;
+    background-image: url(../images/bg_food_white.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover; /* For WebKit*/
