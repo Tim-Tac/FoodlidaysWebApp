@@ -61,7 +61,8 @@ $(document).ready(function()
         
         $("#logout").click(function(event)
         {
-            alert("Deconnexion");
+            localStorage.clear();
+            window.open("login.html");
         });
         
     });
