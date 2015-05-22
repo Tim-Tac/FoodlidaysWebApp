@@ -115,17 +115,29 @@ body
 .any_command
 {
     text-align: center;
-    margin-top: 60%;
-    color: dimgrey;
+    margin-top: 50%;
+    color: #666666;
 }
 
-
+.logout
+{
+    float: left;
+    width: 50%;
+    height: 35px;
+    font-size: 15px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    vertical-align: middle;
+}
 
 
 
 /****************************************** CSS FOR PROFIL ****************************************/
 
-.info
+.info_profil
 {
-    margin-top: 1%;
+    margin-top: 2%;
+    color: #444444;
 }

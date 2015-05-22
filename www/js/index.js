@@ -23,7 +23,7 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <table> <tr> <td>" + data[i].name + "</td> </tr> <tr> <td> " + data[i].note + " </td> </tr> </table> </td> <td> "  + data[i].price  + " </td> </tr>");
+                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <table> <tr> <td>" + data[i].name + "                 </td> </tr> <tr> <td> " + data[i].note + " </td> </tr> </table> </td> <td> "  + data[i].price  + " </td> </tr>");
                 
             }
         },"json").fail(function() 
@@ -55,15 +55,20 @@ $(document).ready(function()
         $("#container").html("");
         $("body").css("background-image", "url(../images/home_slide3.png)");
         
-        $("#container").append("Identifiant de chambre : " + localStorage.room_number + "</br> Votre email : " + localStorage.user_email + "</br> </br> Localisation de la chambre : </br> " + localStorage.street_address + " </br> " + localStorage.zip + " " + localStorage.city + "</br>" + localStorage.floor + "e étage, chambre " + localStorage.room);
-        
+        $("#container").append("<div class=\"info_profil\"> Identifiant de chambre : " + localStorage.room_number + " </div>");
+        $("#container").append("<div class=\"info_profil\"> Votre email : " + localStorage.user_email + " </div> </br>");
+        $("#container").append("<div class=\"info_profil\"> Localisation de la chambre : </div>");
+        $("#container").append("<div class=\"info_profil\">" + localStorage.street_address + " </div>" );
+        $("#container").append("<div class=\"info_profil\">" + localStorage.zip + " " + localStorage.city + " </div>");
+        $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
+        $("#container").append("<input type=\"button\" class=\"logout\" id=\"logout\" value=\"Déconnexion\" >");
     });
     
-    
-    $("#container").click(function(event)
+    $("#logout").click(function(event)
     {
         alert("ok");
     });
+
     
     
 });
