@@ -12,16 +12,6 @@ body
     background-size: cover;         /* Generic*/
 }
 
-.body_bg
-{
-        background-image: url(../images/home_slide1.png);
-}
-
-.body_bg2
-{
-        background-image: url(../images/home_slide2.png);
-}
-
 .container
 {
     padding: 3%;
