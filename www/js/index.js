@@ -40,7 +40,7 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        if(articles.length === 0) $("#container").html("<h3 class=\"any_command\" > <i> Votre panier est vide </i> </h3>");
+        if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
         {
             $("#container").html("liste panier + bouton achat");
