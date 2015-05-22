@@ -4,7 +4,6 @@ body
     margin: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/home_slide1.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover; /* For WebKit*/
@@ -13,15 +12,22 @@ body
     background-size: cover;         /* Generic*/
 }
 
+.body_bg
+{
+        background-image: url(../images/home_slide1.png);
+}
+
+.body_bg2
+{
+        background-image: url(../images/home_slide2.png);
+}
 
 .container
 {
     padding: 3%;
 }
 
-
-
-/********************************** CSS FOR HEADER BUTTONS ********************************/
+/************************************** CSS FOR HEADER BUTTONS **************************************/
 .head
 {
     width: 100%;
@@ -100,7 +106,7 @@ body
 }
 
 
-/************************************* CSS FOR LIST OF FOOD*************************************/
+/************************************* CSS FOR MENU*************************************/
 
 .image_food
 {
@@ -110,7 +116,7 @@ body
 
 .note  
 {
-   font-size: 0.7em;
+   font-size: 0.8em;
 }
 
 #productlist td
@@ -137,20 +143,6 @@ body
     color: #666666;
 }
 
-.logout
-{
-    float: left;
-    width: 50%;
-    height: 35px;
-    font-size: 15px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px;
-    vertical-align: middle;
-}
-
-
 
 /****************************************** CSS FOR PROFIL ****************************************/
 
@@ -158,4 +150,14 @@ body
 {
     margin-top: 2%;
     color: #444444;
+}
+
+.logout
+{
+    float: left;
+    width: 50%;
+    height: 35px;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: bottom
 }
