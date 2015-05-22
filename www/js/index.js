@@ -23,7 +23,7 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <table> <tr> <td>" + data[i].name + "                 </td> </tr> <tr> <td class='note'> " + data[i].note + " </td> </tr> </table> </td> <td> "  + data[i].price  + " </td> </tr>");
+                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <table> <tr> <td>" + data[i].name + "                 </td> </tr> <tr> <td class='note'> " + data[i].note + " </td> </tr> </table> </td> <td> "  + data[i].price  + "€ </td> </tr>");
                 
             }
         },"json").fail(function() 
