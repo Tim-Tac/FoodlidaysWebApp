@@ -104,12 +104,23 @@ body
 
 .image_food
 {
-    width: 30%;
+    width: 50%;
 }
 
 .note
 {
    font-size: 0.7em;
+}
+
+#productlist td
+{
+    text-align: center;
+    vertical-align:middle;
+}
+
+#productlist tr
+{
+    height:80px;
 }
 
 

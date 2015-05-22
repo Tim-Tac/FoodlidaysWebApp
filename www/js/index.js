@@ -20,16 +20,19 @@ $(document).ready(function()
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function( data ) 
         {
+            $( "#container" ).append("<table id='productlist'>")
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#container" ).append("<tr> <td>  <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <table> <tr> <td>" + data[i].name + "                 </td> </tr> <tr> <td class='note'> " + data[i].note + " </td> </tr> </table> </td> <td> "  + data[i].price  + "€ </td> </tr>");
+                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td>" + data[i].name + "</td> <td class='note'> " + data[i].note + " </td>  <td> "  + data[i].price  + "€ </td> </tr>");
                 
             }
         },"json").fail(function() 
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
+        
+        $( "#container" ).append("</table>");
     });
     
     
