@@ -17,6 +17,8 @@ body
 {
     padding: 4%;
     padding-top: 42px;
+    height: 100%;
+    width: 100%;
 }
 
 /************************************** CSS FOR HEADER BUTTONS **************************************/
@@ -142,9 +144,9 @@ body
 .any_command
 {
     text-align: center;
-    margin-top: 50%;
     color: #666666;
     font-style: italic;
+    margin-top: 50%;
 }
 
 

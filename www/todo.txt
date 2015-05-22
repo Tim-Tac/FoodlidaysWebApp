@@ -1,3 +1,2 @@
-﻿- changer les backgrounds : changement présents, mais ça enlève seulement sans remettre le nouveau : path pas bon ? 
-- css bouton déconnexion pour mettre le bouton en bas, et ajouter un event dessus pour supprimer le storage des cookies
 - réfléchir a un moyen de récupérer l'article sur lequel on a cliqué
+- "panier vide" a centrer verticalement

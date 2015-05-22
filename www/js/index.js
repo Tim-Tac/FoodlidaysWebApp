@@ -12,7 +12,7 @@ $(document).ready(function()
     
     /*************************************MENU CLICK**************************************/
     $("#menu").click(function(event)
-    {  
+    { 
         $("#container").html("");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
@@ -24,12 +24,11 @@ $(document).ready(function()
             {
                 $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <div>" + data[i].name + "</div><div                       class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
             }
+            $( "#container" ).append("</table>");
         },"json").fail(function() 
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
-        
-        $( "#container" ).append("</table>");
     });
     
     
@@ -67,7 +66,6 @@ $(document).ready(function()
         
     });
     
-
 
     $("#menu").trigger("click");
     
