@@ -1,8 +1,8 @@
 function checkNetConnection()
 {
      jQuery.ajaxSetup({async:false});
-     re="";
-     r=Math.round(Math.random() * 10000);
+     var re="";
+     var r=Math.round(Math.random() * 10000);
      $.get("http://demos.subinsb.com/cdn/dot.png",{subins:r},function(d){
       re=true;
      }).error(function(){
@@ -18,7 +18,7 @@ $(document).ready(function()
     {
        document.addEventListener("intel.xdk.device.barcode.scan",function(evt)
         {
-            if (evt.success == true) 
+            if (evt.success === true) 
             {
                 if (evt.codedata == "http://www.sampleurl.com/fake.html")
                 {

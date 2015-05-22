@@ -40,7 +40,7 @@ $(document).ready(function()
         $("#container").html("");
         $("body").css("background-image", "url(../images/home_slide1.png)");
         
-        if(articles.length === 0) $("#container").html("<h3> Votre panier est vide </h3>");
+        if(articles.length === 0) $("#container").html("<h3 class=\"any_command\" > <i> Votre panier est vide </i> </h3>");
         else 
         {
             $("#container").html("liste panier + bouton achat");
