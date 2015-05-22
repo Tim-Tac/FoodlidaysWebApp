@@ -15,7 +15,8 @@ $(document).ready(function()
     $("#menu").click(function(event)
     {  
         $("#container").html("");
-        $("body").removeClass("body_bg").addClass("body_bg2");
+        //$("body").removeClass("body_bg").addClass("body_bg2");
+        $("body").css('background-color', 'green');
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function( data ) 
@@ -41,7 +42,7 @@ $(document).ready(function()
     $("#panier").click(function(event)
     {
         $("#container").html("");
-        $("body").css('background-image', 'url(../images/home_slide1.png)');
+        $("body").css('background-color', 'red');
         
         if(articles.length === 0) $("#container").html("<h3 class=\"any_command\" > <i> Votre panier est vide </i> </h3>");
         else 
@@ -56,7 +57,7 @@ $(document).ready(function()
     $("#profil").click(function(event)
     {
         $("#container").html("");
-        $("body").css({backgroundImage :  'url(../images/home_slide3.png)'});
+        $("body").css('background-color', 'blue');
         
         $("#container").append("<div class=\"info_profil\"> Identifiant de chambre : " + localStorage.room_number + " </div>");
         $("#container").append("<div class=\"info_profil\"> Votre email : " + localStorage.user_email + " </div> </br>");
