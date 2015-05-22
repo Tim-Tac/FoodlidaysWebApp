@@ -47,10 +47,16 @@ body
 
 .valid_log_in
 {
-    margin-top: 100px;
+    margin-top: 90px;
     height: 40px;
     width: 62%;
     background-color: rgba(128,128,128,0.8);
+    bottom: 3%;
+}
+
+.qr
+{
+    margin-top: 50px;
 }
 
 p
