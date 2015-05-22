@@ -24,7 +24,7 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td>" + data[i].name + "</td> <td class='note'> " + data[i].note + " </td>  <td> "  + data[i].price  + "€ </td> </tr>");
+                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <div>" + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
                 
             }
         },"json").fail(function() 
