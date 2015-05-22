@@ -137,7 +137,7 @@ body
 #productlist tr
 {
     height:80px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px #B2B0A6 solid;
 }
 
 #productlist tr:last-child
