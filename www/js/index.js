@@ -14,8 +14,6 @@ $(document).ready(function()
     $("#menu").click(function(event)
     {  
         $("#container").html("");
-        //$("body").removeClass("body_bg").addClass("body_bg2");
-        $("body").css('background-color', 'green');
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function( data ) 
@@ -24,8 +22,7 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <div>" + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
-                
+                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td> <div>" + data[i].name + "</div><div                       class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
             }
         },"json").fail(function() 
         {
@@ -36,12 +33,10 @@ $(document).ready(function()
     });
     
     
-    
     /**********************************PANIER CLICK****************************************/
     $("#panier").click(function(event)
     {
         $("#container").html("");
-        $("body").css('background-color', 'red');
         
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
@@ -51,12 +46,10 @@ $(document).ready(function()
     });
     
     
-    
     /***********************************PROFIL CLICK***************************************/
     $("#profil").click(function(event)
     {
         $("#container").html("");
-        $("body").css('background-color', 'blue');
         
         $("#container").append("<div class=\"info_profil\"> Identifiant de chambre : " + localStorage.room_number + " </div>");
         $("#container").append("<div class=\"info_profil\"> Votre email : " + localStorage.user_email + " </div> </br>");

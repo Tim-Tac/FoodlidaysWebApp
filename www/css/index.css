@@ -2,12 +2,9 @@ body
 {
     margin: 0;
     height: 100%;
-<<<<<<< HEAD
     width: 100%;
     background-size: 100% auto;
     background-image: url(../images/bg_food_white.png);
-=======
->>>>>>> origin/master
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover; /* For WebKit*/
