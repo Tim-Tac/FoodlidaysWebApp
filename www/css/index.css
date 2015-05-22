@@ -122,6 +122,11 @@ body
    font-size: 0.8em;
 }
 
+#productlist 
+{
+    border-collapse: collapse;
+}
+
 #productlist td
 {
     text-align: center;
@@ -132,7 +137,14 @@ body
 #productlist tr
 {
     height:80px;
+    border-bottom: 1px solid gray;
 }
+
+#productlist tr:last-child
+{
+    border-bottom: none;
+}
+
 
 
 
