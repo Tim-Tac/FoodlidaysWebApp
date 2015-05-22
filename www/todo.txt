@@ -1,5 +1,3 @@
-- simuler un click au lancement de l'app pour dl les artciles -> $("#menu").click(); déjà présent mais ne fonctionne pas
-- changer les backgrounds : changement présents, mais ça enlève seulement sans remettre le nouveau : path pas bon ? 
-- css pour arranger la liste
+﻿- changer les backgrounds : changement présents, mais ça enlève seulement sans remettre le nouveau : path pas bon ? 
 - css bouton déconnexion pour mettre le bouton en bas, et ajouter un event dessus pour supprimer le storage des cookies
 - réfléchir a un moyen de récupérer l'article sur lequel on a cliqué
