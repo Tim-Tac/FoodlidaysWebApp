@@ -15,7 +15,7 @@ $(document).ready(function()
         $("#container").html("");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
-        function( data ) 
+        function(data) 
         {
             $( "#container" ).append("<table id=\"productlist\" >")
             
@@ -25,13 +25,13 @@ $(document).ready(function()
             }
             $( "#container" ).append("</table>");
         }
-        ,"json").fail(function() 
+        ,"json").fail(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
         
-        $(document).on("click", "#productlist tr", function(e) {
-        alert(this);
+        $(document).on("click", "#productlist tr", function(e) {        
+        alert(this.cells.item);
         });
         
     });
