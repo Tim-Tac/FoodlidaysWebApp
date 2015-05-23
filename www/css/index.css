@@ -18,7 +18,7 @@ body
     padding: 4%;
     padding-top: 42px;
     height: 100%;
-    width: 100%;
+    width: 92%;
 }
 
 /************************************** CSS FOR HEADER BUTTONS **************************************/
@@ -163,6 +163,16 @@ body
     margin-top: 5%;
     margin-bottom: 5%;
     height: 2px;
+}
+
+.orders
+{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 8%;
+    color: #555555;
+    text-align: center;
 }
 
 #logout

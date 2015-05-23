@@ -65,6 +65,7 @@ $(document).ready(function()
         $("#container").append("<div class=\"info_profil\">" + localStorage.zip + " " + localStorage.city + " </div>");
         $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
         $("#container").append("<hr class=\"sep\" />");
+        $("#container").append("<div class=\"orders\"> Aucunes commande en cours </div>");
         
         
         $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
