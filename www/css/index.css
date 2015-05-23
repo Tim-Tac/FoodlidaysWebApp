@@ -195,6 +195,11 @@ body
     width: 100%;
 }
 
+.first_row
+{
+    margin-bottom: 3%;
+}
+
 .text_left
 {
     text-align: left;

@@ -71,7 +71,7 @@ $(document).ready(function()
             if(data.length >= 1)
             {
                 $( "#container" ).append("<div class='orders'> Vos commandes : </div>");
-                $( "#container" ).append("<table id='full_w' > <tr> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
+                $( "#container" ).append("<table id='full_w' > <tr class=\"first_row\"> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
             
                 for(var i = 0 ; i<data.length ; i++)
                 {
@@ -90,6 +90,13 @@ $(document).ready(function()
         });
         
         $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
+        
+        
+        $(document).on("click", "#full_w tr", function(e)
+        {        
+            alert($(this).attr('id'));
+        });
+        
         
         $("#logout").click(function(event)
         {
