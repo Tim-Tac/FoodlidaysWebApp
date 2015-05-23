@@ -1,5 +1,3 @@
-﻿- "panier vide" a centrer verticalement
-- le fond dans le menu est zoomé car la liste est plus grande que l'écran, faurdait avoir le même background que dans les autres sections
 - regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)
 
 - réfléchir a un moyen de récupérer l'article sur lequel on a cliqué

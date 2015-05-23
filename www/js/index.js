@@ -73,12 +73,12 @@ $(document).ready(function()
             if(data.length >= 1)
             {
                 $( "#container" ).append("<div class=\"orders\"> Vos commandes : </div>");
-                $( "#container" ).append("<table class=\"full_w\" > <tr> <td> Numéro </td> <td> Passée le </td> <td> Statut </td> </tr> </table>");
-                $( "#container" ).append("<table>");
+                $( "#container" ).append("<table class=\"full_w\" > <tr> <td class=\"text_left\"> Numéro </td> <td class=\"text_middle\"> Passée le </td> <td class=\"text_right\"> Statut </td> </tr> </table>");
+                $( "#container" ).append("<table class=\"full_w\">");
             
                 for(var i = 0 ; i<data.length ; i++)
                 {
-                    $( "#container" ).append("<tr> <td> " + data[i].id + " </td> <td> " + data[i].created_at + " </td> <td> " + data[i].status + " </td> </tr> ");
+                    $( "#container" ).append("<tr> <td  class=\"text_left\"> " + data[i].id + " </td> <td class=\"text_middle\"> " + data[i].created_at + " </td> <td class=\"text_right\"> " + data[i].status + " </td> </tr> ");
                 }
                 $( "#container" ).append("</table>");
             }
