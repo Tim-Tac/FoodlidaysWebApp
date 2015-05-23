@@ -143,10 +143,12 @@ body
 
 .any_command
 {
-    text-align: center;
-    color: #666666;
-    font-style: italic;
-    margin-top: 50%;
+   text-align: center;
+   color: #666666;
+   font-style: italic;
+   position: fixed;
+   top: 45%;
+   left: 15%;
 }
 
 
