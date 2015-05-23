@@ -108,23 +108,26 @@ $(document).ready(function()
     
     
     
-    
-    
-    
     /** Try for disable back button **/
 
-$(window).on("navigate", function (event, data) {
-    alert("nav");
-  var direction = data.state.direction;
-  if (direction == 'back') {
-    alert("back");
-  }
-  if (direction == 'forward') {
-    // do something else
-  }
-});
+    $(window).on("navigate", function (event, data) 
+    {
+        alert("nav");
+        var direction = data.state.direction;
+        if (direction == 'back') {
+            alert("back");
+        } 
+        if (direction == 'forward') {
+        // do something else
+        }
+    });
     
-    
+    document.addEventListener("intel.xdk.device.hardware.back", function()
+    {
+        alert("b");
+        intel.xdk.device.addVirtualPage(); 
+        document.getElementsByTagName("body")[0].innerHTML += "Hardware back button pressed";
+    });
     
     
 });
