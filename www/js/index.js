@@ -105,4 +105,26 @@ $(document).ready(function()
 
     $("#menu").trigger("click");
     
+    
+    
+    
+    
+    
+    
+    /** Try for disable back button **/
+
+$(window).on("navigate", function (event, data) {
+    alert("nav");
+  var direction = data.state.direction;
+  if (direction == 'back') {
+    alert("back");
+  }
+  if (direction == 'forward') {
+    // do something else
+  }
+});
+    
+    
+    
+    
 });
