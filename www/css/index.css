@@ -189,3 +189,13 @@ body
     position: fixed;
     bottom: 4%;
 }
+
+.full_w
+{
+    width: 90%;
+}
+
+.full_w td
+{
+    width: 30%;
+}

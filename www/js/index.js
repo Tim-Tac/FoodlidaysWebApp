@@ -73,7 +73,7 @@ $(document).ready(function()
             if(data.length >= 1)
             {
                 $( "#container" ).append("<div class=\"orders\"> Vos commandes : </div>");
-                $( "#container" ).append("<table> <tr> <td> Numéro </td> <td> Passée le </td> <td> Statut </td> </tr> </table>");
+                $( "#container" ).append("<table class=\"full_w\" > <tr> <td> Numéro </td> <td> Passée le </td> <td> Statut </td> </tr> </table>");
                 $( "#container" ).append("<table>");
             
                 for(var i = 0 ; i<data.length ; i++)
@@ -108,7 +108,7 @@ $(document).ready(function()
     
     
     
-    /** Try for disable back button **/
+    /********************** Try for disable back button ****************************/
 
     $(window).on("navigate", function (event, data) 
     {
@@ -122,12 +122,18 @@ $(document).ready(function()
         }
     });
     
+    document.addEventListener("intel.xdk.device.ready",function() 
+    {
+        //start grabbing the Android hardware back button
+        intel.xdk.device.addVirtualPage();     
+    }, false);
+    
     document.addEventListener("intel.xdk.device.hardware.back", function()
     {
-        alert("b");
+        alert("back");
         intel.xdk.device.addVirtualPage(); 
         document.getElementsByTagName("body")[0].innerHTML += "Hardware back button pressed";
-    });
+    }, false);
     
     
 });
