@@ -1,3 +1,14 @@
-- regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)
+- résumé commande au click dans le profil
 
-- réfléchir a un moyen de récupérer l'article sur lequel on a cliqué
+- margin en dessous de la row titre dans le profil
+
+- alert pour demander qnatité + ajouter à la liste des artciles
+
+
+
+
+
+
+
+
+- regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)
