@@ -1,6 +1,6 @@
 $(document).ready(function() 
 {
-    if(localStorage.getItem("connected") === null) window.open("login.html");
+    if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
     
     //define Article object
     var Article = {
@@ -9,10 +9,9 @@ $(document).ready(function()
     };
     var articles = [];
     
-    
     /*************************************MENU CLICK**************************************/
     $("#menu").click(function(event)
-    { 
+    {
         $("#container").html("");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
@@ -22,22 +21,20 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\"> <div>" + data[i].name + "</div><div                       class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>");
+                $( "#productlist" ).append("<tr> <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\"> <div>" +                                     data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
             }
             $( "#container" ).append("</table>");
-        },"json").fail(function() 
+        }
+        ,"json").fail(function() 
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
         
-        $( "#container" ).click(function( event ) 
-        {
-            var $row = $(this).closest("tr");
-            var $test = $row.find(".to_get").text();
-            alert(JSON.stringify($rows));
+        $(document).on("click", "#productlist tr", function(e) {
+        alert(this);
         });
+        
     });
-    
     
     /**********************************PANIER CLICK****************************************/
     $("#panier").click(function(event)
@@ -47,11 +44,9 @@ $(document).ready(function()
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
         {
-            //afficher en liste le panier + bouton commander
             $("#container").html("liste panier + bouton achat");
         }
     });
-    
     
     /***********************************PROFIL CLICK***************************************/
     $("#profil").click(function(event)
@@ -100,12 +95,8 @@ $(document).ready(function()
         });
         
     });
-    
 
     $("#menu").trigger("click");
-    
-    
-    
     
     /********************** Try for disable back button ****************************/
 
