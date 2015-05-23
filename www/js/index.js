@@ -47,6 +47,7 @@ $(document).ready(function()
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
         {
+            //afficher en liste le panier + bouton commander
             $("#container").html("liste panier + bouton achat");
         }
     });
@@ -63,6 +64,9 @@ $(document).ready(function()
         $("#container").append("<div class=\"info_profil\">" + localStorage.street_address + " </div>" );
         $("#container").append("<div class=\"info_profil\">" + localStorage.zip + " " + localStorage.city + " </div>");
         $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
+        $("#container").append("<hr class=\"sep\" />");
+        
+        
         $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
         
         $("#logout").click(function(event)

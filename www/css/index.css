@@ -158,6 +158,13 @@ body
     color: #444444;
 }
 
+.sep
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 2px;
+}
+
 #logout
 {
     width: 50%;
