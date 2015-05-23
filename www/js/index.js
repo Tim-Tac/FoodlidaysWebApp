@@ -66,28 +66,26 @@ $(document).ready(function()
         $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
         $("#container").append("<hr class=\"sep\" />");
         
-        
+        // get orders from email user
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/order/" + localStorage.user_email, 
         function( data ) 
         {
-            alert(data.length)
-            if(data.length > 5)
+            if(data.length >= 1)
             {
-                /*$( "#container" ).append("<table>")
+                $( "#container" ).append("<div class=\"orders\"> Vos commandes : </div>");
+                $( "#container" ).append("<table> <tr> <td> Numéro </td> <td> Passée le </td> <td> Statut </td> </tr> </table>");
+                $( "#container" ).append("<table>");
             
                 for(var i = 0 ; i<data.length ; i++)
                 {
-
+                    $( "#container" ).append("<tr> <td> " + data[i].id + " </td> <td> " + data[i].created_at + " </td> <td> " + data[i].status + " </td> </tr> ");
                 }
-                $( "#container" ).append("</table>");*/
-                alert(data);
-                
+                $( "#container" ).append("</table>");
             }
             else
             {
                 $("#container").append("<div class=\"orders\"> Aucunes commande en cours </div>");
             }
-            
         },
         "json").fail(function() 
         {
