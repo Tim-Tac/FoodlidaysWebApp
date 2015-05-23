@@ -65,8 +65,34 @@ $(document).ready(function()
         $("#container").append("<div class=\"info_profil\">" + localStorage.zip + " " + localStorage.city + " </div>");
         $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
         $("#container").append("<hr class=\"sep\" />");
-        $("#container").append("<div class=\"orders\"> Aucunes commande en cours </div>");
         
+        
+        $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/order/" + localStorage.user_email, 
+        function( data ) 
+        {
+            alert(data.length)
+            if(data.length > 5)
+            {
+                /*$( "#container" ).append("<table>")
+            
+                for(var i = 0 ; i<data.length ; i++)
+                {
+
+                }
+                $( "#container" ).append("</table>");*/
+                alert(data);
+                
+            }
+            else
+            {
+                $("#container").append("<div class=\"orders\"> Aucunes commande en cours </div>");
+            }
+            
+        },
+        "json").fail(function() 
+        {
+            alert( "A network error occured, please check your internet connexion or try again later" );
+        });
         
         $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
         
