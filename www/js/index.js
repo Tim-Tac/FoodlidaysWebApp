@@ -23,17 +23,31 @@ $(document).ready(function()
             {
                 $( "#productlist" ).append("<tr id="+data[i].id+" > <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\"> <div>"                  + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
             }
+            
             $( "#container" ).append("</table>");
+            
+            
+            $(document).on("click", "#productlist tr", function(e)
+             { 
+                var id = $(this).attr('id');
+                
+                for(var i = 0; i < data.length; i++)
+                {
+                    if(id == data[i].id)
+                    {
+                        alert(data[i].name);
+                    }
+                }
+            });
+                       
+            
         }
         ,"json").fail(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
         
-        $(document).on("click", "#productlist tr", function(e)
-        {        
-            alert($(this).attr('id'));
-        });
+
 
 
         
