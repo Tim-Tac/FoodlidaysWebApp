@@ -72,13 +72,12 @@ $(document).ready(function()
         {
             if(data.length >= 1)
             {
-                $( "#container" ).append("<div class=\"orders\"> Vos commandes : </div>");
-                $( "#container" ).append("<table class=\"full_w\" > <tr> <td class=\"text_left\"> Numéro </td> <td class=\"text_middle\"> Passée le </td> <td class=\"text_right\"> Statut </td> </tr> </table>");
-                $( "#container" ).append("<table class=\"full_w\">");
+                $( "#container" ).append("<div class='orders'> Vos commandes : </div>");
+                $( "#container" ).append("<table id='full_w' > <tr> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
             
                 for(var i = 0 ; i<data.length ; i++)
                 {
-                    $( "#container" ).append("<tr> <td  class=\"text_left\"> " + data[i].id + " </td> <td class=\"text_middle\"> " + data[i].created_at + " </td> <td class=\"text_right\"> " + data[i].status + " </td> </tr> ");
+                    $( "#full_w" ).append("<tr> <td class='text_left'> " + data[i].id + " </td> <td class='text_middle'> " + data[i].created_at + " </td> <td class='text_right'> " + data[i].status + " </td> </tr> ");
                 }
                 $( "#container" ).append("</table>");
             }

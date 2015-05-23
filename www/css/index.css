@@ -199,21 +199,18 @@ body
 {
     text-align: left;
     width: 20%;
-    background-color: red;
 }
 
 .text_middle
 {
     text-align: center;
     width: 55%;
-    background-color: blue;
 }
 
 .text_right
 {
     text-align: right;
     width: 25%;
-    background-color: green;
 }
 
 
