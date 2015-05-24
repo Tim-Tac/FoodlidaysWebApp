@@ -1,4 +1,7 @@
-- dialog/alert pour demander quantité + ajouter à la liste des articles
+# css pour espacer un peu plus verticalement dans la liste du profil
+
+
+- dialog/alert pour demander quantité
 
 - afficher la liste des articles dans le panier
 
@@ -6,4 +9,4 @@
 
 
 
-- regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)
+? regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)

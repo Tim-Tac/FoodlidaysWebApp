@@ -3,9 +3,12 @@ $(document).ready(function()
     if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
     
     //define Article object
-    var Article = function(n,q) {
+    var Article = function(n,q,p,i,id) {
         this.name = n;
         this.quantity = q;
+        this.price = p
+        this.image = i;
+        this.id = id;
     };
     var articles = [];
     
@@ -36,7 +39,7 @@ $(document).ready(function()
                 {
                     if(id == data[i].id)
                     {
-                        var art = new Article(data[i].name,1);
+                        var art = new Article(data[i].name,1,data[i].price,data[i].image,data[i].id);
                         articles.push(art);
                         alert(data[i].name + " ajouté au panier ! ");
                     }
