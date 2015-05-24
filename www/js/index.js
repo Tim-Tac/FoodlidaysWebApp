@@ -113,14 +113,19 @@ $(document).ready(function()
         $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
         
         
-         $(document).on("click", "#full_w tr", function(e)
-        {
-             alert($(this).attr('id'));
+        //Résumé au click d'une commade 
+        $(document).on("click", "#full_w tr", function(e)
+        {    
              for(var i = 0 ; i<orders_list.length ; i++)
-             {
-                 if(orders_list[i].id === $(this).attr('id') )
+             {   
+                 if(orders_list[i].id == $(this).attr('id') )
                  {
-                     alert("Résumé commande  " + data[i].id);
+                     var toShow = "Résumé de la commande " + orders_list[i].id + "\n ------------------------------- \n";
+                     
+                     
+                     
+                     
+                     alert(toShow);
                  }
              }
             
