@@ -9,7 +9,9 @@ $(document).ready(function()
     };
     var articles = [];
     
+    
     /*************************************MENU CLICK**************************************/
+    
     $("#menu").click(function(event)
     {
         $("#container").html("");
@@ -17,11 +19,11 @@ $(document).ready(function()
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
         {
-            $( "#container" ).append("<table id=\"productlist\" >")
+            $( "#container" ).append("<table id=\"productlist\" >");
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#productlist" ).append("<tr id="+data[i].id+" > <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\"> <div>"                  + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
+                $( "#productlist" ).append("<tr id="+data[i].id+" > <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\">                      <div>" + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
             }
             
             $( "#container" ).append("</table>");
@@ -46,8 +48,6 @@ $(document).ready(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
-        
-
 
 
         
@@ -65,9 +65,14 @@ $(document).ready(function()
         }
     });
     
+    
+    
     /***********************************PROFIL CLICK***************************************/
+    
     $("#profil").click(function(event)
     {
+        var orders_list;
+        
         $("#container").html("");
         
         $("#container").append("<div class=\"info_profil\"> Identifiant de chambre : " + localStorage.room_number + " </div>");
@@ -78,18 +83,20 @@ $(document).ready(function()
         $("#container").append("<div class=\"info_profil\">" + localStorage.floor + "e étage, chambre " + localStorage.room + "</div>");
         $("#container").append("<hr class=\"sep\" />");
         
+        
         // get orders from email user
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/order/" + localStorage.user_email, 
         function( data ) 
         {
+            orders_list = data;
             if(data.length >= 1)
             {
                 $( "#container" ).append("<div class='orders'> Vos commandes : </div>");
-                $( "#container" ).append("<table id='full_w' > <tr class=\"first_row\"> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
+                $( "#container" ).append("<table id=\"full_w\" > <tr> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
             
                 for(var i = 0 ; i<data.length ; i++)
                 {
-                    $( "#full_w" ).append("<tr> <td class='text_left'> " + data[i].id + " </td> <td class='text_middle'> " + data[i].created_at + " </td> <td class='text_right'> " + data[i].status + " </td> </tr> ");
+                    $( "#full_w" ).append("<tr id=" + data[i].id + "> <td class='text_left'> " + data[i].id + " </td> <td class='text_middle'> " + data[i].created_at + " </td> <td class='text_right'> " + data[i].status + " </td>                             </tr> ");
                 }
                 $( "#container" ).append("</table>");
             }
@@ -106,9 +113,17 @@ $(document).ready(function()
         $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
         
         
-        $(document).on("click", "#full_w tr", function(e)
-        {        
-            alert($(this).attr('id'));
+         $(document).on("click", "#full_w tr", function(e)
+        {
+             alert($(this).attr('id'));
+             for(var i = 0 ; i<orders_list.length ; i++)
+             {
+                 if(orders_list[i].id === $(this).attr('id') )
+                 {
+                     alert("Résumé commande  " + data[i].id);
+                 }
+             }
+            
         });
         
         
@@ -121,6 +136,11 @@ $(document).ready(function()
     });
 
     $("#menu").trigger("click");
+    
+    
+    
+    
+    
     
     /********************** Try for disable back button ****************************/
 

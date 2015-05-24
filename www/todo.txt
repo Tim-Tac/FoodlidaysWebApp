@@ -1,7 +1,5 @@
 - résumé commande au click dans le profil
 
-- margin en dessous de la row titre dans le profil
-
 - alert pour demander qnatité + ajouter à la liste des artciles
 
 
