@@ -146,17 +146,43 @@ body
    left: 15%;
 }
 
-.basket_table
-{
-    width: 100%;
-}
-
 .image_basket
 {
-    width: 50px;
+   width: 30%;
+   margin-left: -10px;
+}
+
+#toOrder 
+{
+    width: 50%;
+    height: 40px;
+    padding: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #1CB841;
+    border: 0;
+    cursor: pointer;
+    left: 25%;
+    position: fixed;
+    bottom: 4%;
+    
 }
 
 
+#basketlist td
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 15%;
+}
+
+#basketlist tr
+{
+    height:80px;
+    border-bottom: 1px #B2B0A6 solid;
+}
 
 
 /****************************************** CSS FOR PROFIL ****************************************/
@@ -202,14 +228,23 @@ body
     bottom: 4%;
 }
 
-.full_w
+#full_w
 {
     width: 100%;
+    border-collapse: collapse;
 }
 
-.full_w tr
+#full_w tr
 {
-    padding-bottom: 50px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid gray;
+}
+
+#full_w tr:last-child{
+    border-bottom: none;
+    margin-bottom:50px;
+    
 }
 
 .text_left

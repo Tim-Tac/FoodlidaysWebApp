@@ -65,10 +65,10 @@ $(document).ready(function()
         {
             $("#container").html("");
             
-            $("#container").append("<table class=\"basket_table\"> <tr> <th class=\"image_basket\"> </th> <th> Nom </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th> <tr>");
+            $("#container").append("<table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th> <tr>");
             for(var i = 0 ; i < articles.length ; i++)
             {
-                  $("#container").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image +  "\"> </td> <td> "+ articles[i].name +"</td> <td> "+ articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ articles[i].price * articles[i].quantity +" €</td> </td>");
+                  $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+ articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ articles[i].price * articles[i].quantity +" €</td> </tr>");
             }
             $("#container").append("</table> </br> <input type=\"button\" id='toOrder' value=\"Commander\" >");
         }
