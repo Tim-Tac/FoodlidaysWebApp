@@ -146,6 +146,18 @@ body
    left: 15%;
 }
 
+.basket_table
+{
+    width: 100%;
+}
+
+.image_basket
+{
+    width: 50px;
+}
+
+
+
 
 /****************************************** CSS FOR PROFIL ****************************************/
 
@@ -217,7 +229,3 @@ body
     text-align: right;
     width: 25%;
 }
-
-
-
-
