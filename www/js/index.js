@@ -3,9 +3,9 @@ $(document).ready(function()
     if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
     
     //define Article object
-    var Article = {
-        name : "",
-        quantity : ""
+    var Article = function(n,q) {
+        this.name = n;
+        this.quantity = q;
     };
     var articles = [];
     
@@ -28,8 +28,7 @@ $(document).ready(function()
             
             $( "#container" ).append("</table>");
             
-            
-            $(document).on("click", "#productlist tr", function(e)
+              $(document).on("click", "#productlist tr", function(e)
              { 
                 var id = $(this).attr('id');
                 
@@ -37,18 +36,18 @@ $(document).ready(function()
                 {
                     if(id == data[i].id)
                     {
-                        alert(data[i].name);
+                        var art = new Article(data[i].name,1);
+                        articles.push(art);
+                        alert(data[i].name + " ajouté au panier ! ");
                     }
                 }
             });
-                       
             
         }
         ,"json").fail(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
-
 
         
     });
@@ -61,7 +60,8 @@ $(document).ready(function()
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
         {
-            $("#container").html("liste panier + bouton achat");
+            $("#container").html("");
+            alert(articles.length);
         }
     });
     
@@ -144,8 +144,6 @@ $(document).ready(function()
     });
 
     $("#menu").trigger("click");
-    
-    
     
     
     
