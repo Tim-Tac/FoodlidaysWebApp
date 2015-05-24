@@ -1,11 +1,8 @@
-- résumé commande au click dans le profil
+- dialog/alert pour demander quantité + ajouter à la liste des articles
 
-- alert pour demander qnatité + ajouter à la liste des artciles
+- afficher la liste des articles dans le panier
 
-
-
-
-
+- interface panier (supprimer/bouton)
 
 
 

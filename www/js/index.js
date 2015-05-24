@@ -120,10 +120,13 @@ $(document).ready(function()
              {   
                  if(orders_list[i].id == $(this).attr('id') )
                  {
-                     var toShow = "Résumé de la commande " + orders_list[i].id + "\n ------------------------------- \n";
-                     
-                     
-                     
+                     var toShow = "Résumé de la commande " + orders_list[i].id + "\n------------------------------- \n";
+                      
+                     for(var j = 0 ; j<orders_list[i].foods.length ; j++)
+                     {
+                        toShow = toShow + orders_list[i].foods[j].ordered_quantity + " x " + orders_list[i].foods[j].food_name + "\n";
+                      }
+                     toShow = toShow + "------------------------------- \n" + orders_list[i].total_price + "€,  by " + orders_list[i].payment_mode + "\nLe" + orders_list[i].created_at;
                      
                      alert(toShow);
                  }
