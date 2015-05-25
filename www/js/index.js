@@ -19,7 +19,7 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        $("#container").append("Catégorie : <form> <select name=\"cat\" size=\"10\"> <option>test <option>test2 </select> </form>    ");
+        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"10\"> <option selected>Toutes <option> Test </select> </form>    ");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
@@ -48,11 +48,11 @@ $(document).ready(function()
                             text: "Valider", click: function() 
                             {
                                 $( this ).dialog( "close" );
-                                alert(document.getElementById("quantity").value);
+                                //alert(document.getElementById("quantity").value);
                                 
                                 var art = new Article(data[i].name,document.getElementById("quantity").value,data[i].price,data[i].image,data[i].id);
                                 articles.push(art);
-                                alert(data[i].name + " ajouté au panier ! ");
+                                //alert(data[i].name + " ajouté au panier ! ");
                                 
                                 
                             }}]
@@ -67,7 +67,6 @@ $(document).ready(function()
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
 
-        
     });
     
     /**********************************PANIER CLICK****************************************/
