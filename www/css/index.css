@@ -172,7 +172,6 @@ body
 
 .basketwrapper 
 {
-    border: 1px solid gray;
     height: 500px;
     overflow: auto;
 }
