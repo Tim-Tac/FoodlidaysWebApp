@@ -60,11 +60,11 @@ $(document).ready(function()
     {
         $("#container").html("");
         
+        $("#container").append(" <label for=\"spinner\">Select a value:</label>");
+        
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
-        {
-            $("#container").html("");
-            
+        {          
             $("#container").append("<div class='basketwrapper'> <table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th> <tr>");
             for(var i = 0 ; i < articles.length ; i++)
             {
