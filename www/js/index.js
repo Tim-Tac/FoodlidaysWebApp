@@ -61,6 +61,8 @@ $(document).ready(function()
         /** 
         **  retrieve food from server 
         **/
+
+        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form>    ");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
@@ -83,11 +85,11 @@ $(document).ready(function()
                     if(id == data[i].id)
                     {     
                         var tab = data[i];
-
-                        tab.quantity = 0;               
+                        tab.quantity = 0; 
                         
-                         $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id='id"+tab.id+"' name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
+                         $("<div id='id"+tab.id+"'> "+tab.quantity+" </div>").dialog(
                              {
+
                              title : "Choisir quantité de " +  tab.name,
                              buttons: [{
                              text: "Valider", click: function() 
@@ -100,8 +102,45 @@ $(document).ready(function()
                                 alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
                                  
                             }}]
+
+                            title : "Choisir quantité de " +  tab.name,
+                            text: tab.quantity,
+                            buttons: [
+                            {
+                            text: "-",
+                            click: function() 
+                                {
+                                    tab.quantity = tab.quantity - 1;
+                                    $('#id'+tab.id).text(tab.quantity);
+                                }
+                            },
+                            {
+                            text: "+",
+                            click: function() 
+                                {
+                                    tab.quantity = tab.quantity + 1;
+                                    $('#id'+tab.id).text(tab.quantity);
+                                }
+                            },                    
+                            {
+                            text: "Valider",
+                            click: function()
+                                {
+                                    
+                                    if(tab.quantity != 0) {
+                                    $( this ).dialog( "close" );
+                                    
+                                     var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
+                                     articles.push(art);
+                                     alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
+                                    }
+                                    
+                                    else {
+                                        alert("La quantité doit être supérieure à 0");
+                                    }
+                                }}]
                         });
-                        
+  
                     }
                 }
             });
