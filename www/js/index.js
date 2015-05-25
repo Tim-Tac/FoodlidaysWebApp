@@ -2,6 +2,7 @@ $(document).ready(function()
 {
     if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
     
+    //define Cat object
     var Cat = function(i,n){
         this.id = i;
         this.name = n;
@@ -19,14 +20,15 @@ $(document).ready(function()
     var articles = [];
     
     
-    /*************************************MENU CLICK**************************************/
+    
+    /*****************************************************************MENU CLICK*********************************************************************/
     
     $("#menu").click(function(event)
     {
         $("#container").html("");
         
         /**
-        **  retrieve existing categories
+        **  retrieve existing categories from server
         **/
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/category", 
@@ -48,14 +50,13 @@ $(document).ready(function()
         **  fill list with cat
         **/
         
-        $("#container").append("<form class=\"categories\"> Catégorie : <select class=\"sel\" id=\"categ\" name=\"cat\" size=\"1\"> <option selected>Toutes ");
+
+        $("#container").append("<form class=\"categories\"> Catégorie : <select class=\"sel\" id=\"categ\" name=\"cat\" size=\"1\"> <option values\"0\" selected=\"selected\"> Toutes </otpion>");
         for (var d = 0 ; d < cats.length ; d ++)
         {
-            $("#categ").append(" <option> " + cats[d].name +" </select>");
+            $("#categ").append(" <option value=" + cats[d].id + " > " + cats[d].name +" </option> ");
         }
-        $("#container").append("</form>");
-        
-        
+        $("#container").append("</select> </form> <hr class=\"sep\" />");
         
         
         /** 
@@ -101,7 +102,7 @@ $(document).ready(function()
                         
                         
                          $("<div id='id"+tab.id+"'> "+tab.quantity+" </div>").dialog(
-                             {
+                         {
                             title : "Choisir quantité de " +  tab.name,
                             text: tab.quantity,
                             buttons: [
@@ -155,10 +156,34 @@ $(document).ready(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
+        
+        
+        
+        $( "#categ").change(function () 
+        {
+            var str = "";
+            $( "select option:selected" ).each(function()
+            {
+              str += $( this ).text() + " ";
+            });
+        
+            alert(str);
+            for (var e = 0; e < articles.length ; i ++)
+            {
+                
+            }
+            
+            
+        }).change();
+        
 
     });
     
-    /**********************************PANIER CLICK****************************************/
+    
+    
+    
+    /**********************************************************PANIER CLICK***************************************************************/
+    
     $("#panier").click(function(event)
     {
         $("#container").html("");
@@ -199,7 +224,8 @@ $(document).ready(function()
     
     
     
-    /***********************************PROFIL CLICK***************************************/
+    
+    /************************************************************PROFIL CLICK*****************************************************************/
     
     $("#profil").click(function(event)
     {
@@ -277,10 +303,13 @@ $(document).ready(function()
 
     $("#menu").trigger("click");
     
+
     
     
     
-    /********************** Try for disable back button ****************************/
+    
+    
+    /********************************************************* Try for disable back button ********************************************************/
 
     $(window).on("navigate", function (event, data) 
     {
