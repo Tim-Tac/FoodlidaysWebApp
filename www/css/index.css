@@ -219,6 +219,20 @@ body
     margin-bottom: 3%;
 }
 
+.orderwrapper 
+{
+    height:280px;
+    overflow: auto;
+    border: 1px solid gray;
+    font-style: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    margin-top: inherit;
+    color: inherit;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
 #logout
 {
     width: 50%;
@@ -232,7 +246,7 @@ body
     border: 0;
     cursor: pointer;
     left: 25%;
-    position: fixed;
+    position: absolute;
     bottom: 4%;
 }
 
@@ -246,13 +260,6 @@ body
 {
     height: 40px;
     line-height: 40px;
-    border-bottom: 1px solid gray;
-}
-
-#full_w tr:last-child{
-    border-bottom: none;
-    margin-bottom:50px;
-    
 }
 
 .text_left

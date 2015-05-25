@@ -100,8 +100,8 @@ $(document).ready(function()
             orders_list = data;
             if(data.length >= 1)
             {
-                $( "#container" ).append("<div class='orders'> Vos commandes : </div>");
-                $( "#container" ).append("<table id=\"full_w\" > <tr> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
+                $( "#container" ).append("<div class='orderwrapper'> <span class='orders'> Vos commandes : </span> <br/>");
+                $( ".orderwrapper" ).append("<table id=\"full_w\" > <tr> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
             
                 for(var i = 0 ; i<data.length ; i++)
                 {
@@ -111,7 +111,7 @@ $(document).ready(function()
             }
             else
             {
-                $("#container").append("<div class=\"orders\"> Aucunes commande en cours </div>");
+                $("#container").append(" </div> <div class=\"orders\"> Aucunes commande en cours <br/>");
             }
         },
         "json").fail(function() 
@@ -119,7 +119,7 @@ $(document).ready(function()
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
         
-        $("#container").append("<input type=\"button\" id='logout' value=\"Déconnexion\" >");
+        $("#container").append("</div></div> <input type=\"button\" id='logout' value=\"Déconnexion\" > </div>");
         
         
         //Résumé au click d'une commade 
