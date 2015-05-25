@@ -73,11 +73,25 @@ $(document).ready(function()
             $("#container").append("</table> </br></div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }
         
-        
-        $("#toOrder").click(function(event)
-        {
-            $("<div>premier dialog </div>").dialog();
-        });
+            $('#toOrder').click(function () {
+                $("<div> Choisissez votre moyen de payement </div>").dialog({
+                    title: "Méthode de payement",
+                      buttons: [
+                        {
+                        text: "Cash",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+ 
+                        },
+                          
+                        {
+                        text: "Card",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }}]
+                });
+            });
         
     });
     
