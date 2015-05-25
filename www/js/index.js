@@ -20,6 +20,8 @@ $(document).ready(function()
     var articles = [];
     
     
+    var cat_sel  = "";
+    
     
     /*****************************************************************MENU CLICK*********************************************************************/
     
@@ -34,6 +36,7 @@ $(document).ready(function()
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/category", 
         function(data) 
         {
+            cats = [];
             for(var c = 0 ; c < data.length ; c++)
             {
                 var cat = new Cat(data[c].id,data[c].name);
@@ -70,7 +73,10 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                $( "#productlist" ).append("<tr id="+data[i].id+" > <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\">                      <div>" + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
+                if((cat_sel === data[i].category_id) || cat_sel === "")
+                {
+                    $( "#productlist" ).append("<tr id="+data[i].id+" > <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\">                      <div>" + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
+                }
             }
             
             $( "#container" ).append("</table>");
@@ -164,15 +170,21 @@ $(document).ready(function()
             var str = "";
             $( "select option:selected" ).each(function()
             {
-              str += $( this ).text() + " ";
+              str += $( this ).text();
             });
+            
+            for(var f = 0 ; f < cats.length ; f++)
+            {
+                alert(cats[f].name + " " + str);
+                if(cats[f].name === str) 
+                {
+                    alert(cats[f].id);
+                    cat_sel = cats[f].id;
+                }
+            }
         
             alert(str);
-            for (var e = 0; e < articles.length ; i ++)
-            {
-                
-            }
-            
+            $("#menu").trigger("click");
             
         }).change();
         
