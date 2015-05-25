@@ -132,7 +132,7 @@ $(document).ready(function()
                             text: "Valider",
                             click: function()
                                 {
-                                    if(tab.quantity > 0 && existing == 0) {
+                                    if(tab.quantity > 0 && existing === 0) {
                                     $( this ).dialog( "close" );
                                     
                                      var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
@@ -140,7 +140,7 @@ $(document).ready(function()
                                      alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
                                     }
                                     
-                                    else if (tab.quantity == 0) {
+                                    else if (tab.quantity === 0) {
                                         alert("La quantité doit être supérieure à 0");
                                     }
                                     
@@ -205,13 +205,15 @@ $(document).ready(function()
             $("#container").append("<div class='basketwrapper'> <table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th>                  <tr>");
             for(var i = 0 ; i < articles.length ; i++)
             {
-                  $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+ articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ (articles[i].price * articles[i].quantity).toFixed(2) +" €</td> </tr>");
+                  $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+            articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ (articles[i].price * articles[i].quantity).toFixed(2) +" €</td> </tr>");
             }
             $("#container").append("</table> </br></div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
         
-        $('#toOrder').click(function () {
+        $('#toOrder').click(function () 
+        {
+       
                 $("<div> Choisissez votre moyen de payement </div>").dialog({
                     title: "Méthode de payement",
                       buttons: [
@@ -220,16 +222,54 @@ $(document).ready(function()
                             click: function() 
                             {
                                 $( this ).dialog( "close" );
+                                ConstructOrder("cash");
                             }
                         },
                         {
                         text: "Card",
                         click: function() 
                         {
-                            $( this ).dialog( "close" );
+                            $( this ).dialog( "card");
+                            ConstructOrder("close");
                         }}]
                   });
+            
             });
+                          
+        
+        function ConstructOrder(method)
+        {
+            //first, construct array with foods
+            var foods = new Object();
+            
+            for(var g = 0 ; g < articles.length ; g ++)
+            {
+                foods.id = articles[g].id;
+                foods.quantity = articles[g].quantity;
+            }
+            
+            //then, final object order
+            var temp_ord = new Object();
+            order.type_room = localStorage.place_type;
+            order.email = localStorage.user_email;
+            order.room_number = localStorage.room_number;
+            order.id_room = localStorage.id;
+            order.city = localStorage.city;
+            order.zip = localStorage.zip;
+            order.country = localStorage.country;
+            order.address = localStorage.street_address;
+            order.id_user = localStorage.user_id;
+            order.floor = localStorage.floor;
+            order.room = localStorage.room;
+            order.plats = foods;
+            order.method_payment = method;
+            order.language = "fr";
+            
+            var order = JSON.stringify(temp_ord);
+            
+            alert(order);
+            
+        }
         
     });
     
