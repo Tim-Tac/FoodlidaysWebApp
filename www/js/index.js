@@ -6,7 +6,7 @@ $(document).ready(function()
     var Article = function(n,q,p,i,id) {
         this.name = n;
         this.quantity = q;
-        this.price = p
+        this.price = p;
         this.image = i;
         this.id = id;
     };
@@ -33,17 +33,30 @@ $(document).ready(function()
             
             $( "#container" ).append("</table>");
             
-              $(document).on("click", "#productlist tr", function(e)
-             { 
+            $(document).on("click", "#productlist tr", function(e)
+            { 
                 var id = $(this).attr('id');
                 
                 for(var i = 0; i < data.length; i++)
                 {
                     if(id == data[i].id)
                     {
-                        var art = new Article(data[i].name,1,data[i].price,data[i].image,data[i].id);
-                        articles.push(art);
-                        alert(data[i].name + " ajouté au panier ! ");
+                         $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
+                         {
+                             title : "Choisir quantité de " +  data[i].name,
+                             buttons: [{
+                            text: "Valider", click: function() 
+                            {
+                                $( this ).dialog( "close" );
+                                alert(document.getElementById("quantity").value);
+                                
+                                var art = new Article(data[i].name,document.getElementById("quantity").value,data[i].price,data[i].image,data[i].id);
+                                articles.push(art);
+                                alert(data[i].name + " ajouté au panier ! ");
+                                
+                                
+                            }}]
+                        });
                     }
                 }
             });
@@ -79,19 +92,19 @@ $(document).ready(function()
                     title: "Méthode de payement",
                       buttons: [
                         {
-                        text: "Cash",
-                        click: function() {
-                            $( this ).dialog( "close" );
-                        }
- 
+                            text: "Cash",
+                            click: function() 
+                            {
+                                $( this ).dialog( "close" );
+                            }
                         },
-                          
                         {
                         text: "Card",
-                        click: function() {
+                        click: function() 
+                        {
                             $( this ).dialog( "close" );
                         }}]
-                });
+                  });
             });
         
     });
