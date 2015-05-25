@@ -1,2 +1,9 @@
++ menu déroulant pour choisir la catégorie
+
++ spinner + bouton pour choisir la quantité
+
++ construction de json + passer la commande (et récup le payement)
+
+
 
 ? regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)
