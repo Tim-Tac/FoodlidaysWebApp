@@ -41,25 +41,25 @@ $(document).ready(function()
                 {
                     if(id == data[i].id)
                     {
-                        var temp_quantity;
                         
                         var tab = data[i];
+                        tab.quantity = 0;
+                        alert(tab.quantity);
                         
                          $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
                          {
-                             title : "Choisir quantité de " +  data[i].name,
+                             title : "Choisir quantité de " +  tab.name,
                              buttons: [{
                              text: "Valider", click: function() 
                              {
                                  //TODO check si pas deja dans la panier, sinon simplement augmenter la quantité
                                  
-                                temp_quantity =  document.getElementById("quantity").value;
+                                tab.quantity =  document.getElementById("quantity").value;
                                  $( this ).dialog( "close" );
                                  
-                                 var art = new Article(tab.name, temp_quantity , tab.price , tab.image , tab.id);
-                                 alert(art);
-                                articles.push(art);
-                                alert(data[i].name + " ajouté au panier ! ");
+                                 var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
+                                 articles.push(art);
+                                alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
                                 
                             }}]
                         });
@@ -89,7 +89,7 @@ $(document).ready(function()
             $("#container").append("<div class='basketwrapper'> <table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th>                  <tr>");
             for(var i = 0 ; i < articles.length ; i++)
             {
-                  $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+ articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ articles[i].price * articles[i].quantity +" €</td> </tr>");
+                  $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+ articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ (articles[i].price * articles[i].quantity).toFixed(2) +" €</td> </tr>");
             }
             $("#container").append("</table> </br></div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
