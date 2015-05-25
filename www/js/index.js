@@ -43,6 +43,8 @@ $(document).ready(function()
                     {
                         var temp_quantity;
                         
+                        var tab = data[i];
+                        
                          $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
                          {
                              title : "Choisir quantité de " +  data[i].name,
@@ -54,7 +56,8 @@ $(document).ready(function()
                                 temp_quantity =  document.getElementById("quantity").value;
                                  $( this ).dialog( "close" );
                                  
-                                 var art = new Article(data[i].name, temp_quantity , data[i].price , data[i].image , data[i].id);
+                                 var art = new Article(tab.name, temp_quantity , tab.price , tab.image , tab.id);
+                                 alert(art);
                                 articles.push(art);
                                 alert(data[i].name + " ajouté au panier ! ");
                                 
