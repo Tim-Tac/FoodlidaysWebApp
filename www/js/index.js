@@ -40,21 +40,21 @@ $(document).ready(function()
                 for(var i = 0; i < data.length; i++)
                 {
                     if(id == data[i].id)
-                    {
-                        
+                    {     
                         var tab = data[i];
-                        tab.quantity = 0;
-                        alert(tab.quantity);
+                        tab.quantity = 0;               
                         
-                         $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
-                         {
+                         $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id='id"+tab.id+"' name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
+                             {
                              title : "Choisir quantité de " +  tab.name,
                              buttons: [{
                              text: "Valider", click: function() 
                              {
                                  //TODO check si pas deja dans la panier, sinon simplement augmenter la quantité
                                  
-                                tab.quantity =  document.getElementById("quantity").value;
+                                tab.quantity =  document.getElementById('id'+tab.id).value;
+                                 alert( document.getElementById('id'+tab.id).id);
+                                 alert(tab.quantity);
                                  $( this ).dialog( "close" );
                                  
                                  var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
