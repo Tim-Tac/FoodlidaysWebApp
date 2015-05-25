@@ -53,8 +53,6 @@ $(document).ready(function()
                                  //TODO check si pas deja dans la panier, sinon simplement augmenter la quantité
                                  
                                 tab.quantity =  document.getElementById('id'+tab.id).value;
-                                 alert( document.getElementById('id'+tab.id).id);
-                                 alert(tab.quantity);
                                  $( this ).dialog( "close" );
                                  
                                  var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
