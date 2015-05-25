@@ -25,7 +25,10 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        //retrieve existing categories
+        /**
+        **  retrieve existing categories
+        **/
+        
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/category", 
         function(data) 
         {
@@ -34,19 +37,30 @@ $(document).ready(function()
                 var cat = new Cat(data[c].id,data[c].name);
                 cats .push(cat);
             }
-            alert(cats.length);
         }
         ,"json").fail(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
         
-
+        
+        /**
+        **  fill list with cat
+        **/
+        
+        $("#container").append("<form class=\"categories\"> Catégorie : <select class=\"sel\" id=\"categ\" name=\"cat\" size=\"1\"> <option selected>Toutes ");
+        for (var d = 0 ; d < cats.length ; d ++)
+        {
+            $("#categ").append(" <option> " + cats[d].name +" </select>");
+        }
+        $("#container").append("</form>");
         
         
         
         
-        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form> ");
+        /** 
+        **  retrieve food from server 
+        **/
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
