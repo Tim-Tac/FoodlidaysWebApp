@@ -19,7 +19,7 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        $("#container").append(" <label for=\"spinner\">Select a value:</label>");
+        $("#container").append("Catégorie : <form> <select name=\"cat\" size=\"10\"> <option>test <option>test2 </select> </form>    ");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
