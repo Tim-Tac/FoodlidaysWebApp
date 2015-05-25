@@ -72,6 +72,14 @@ $(document).ready(function()
             }
             $("#container").append("</table> </br></div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }
+        
+        
+        $("#toOrder").click(function(event)
+        {
+            //alert("commande"); 
+            $("<div>Test message</div>").dialog();
+        });
+        
     });
     
     
