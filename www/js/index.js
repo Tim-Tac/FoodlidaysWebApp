@@ -76,8 +76,7 @@ $(document).ready(function()
         
         $("#toOrder").click(function(event)
         {
-            //alert("commande"); 
-            $("<div>Test message</div>").dialog();
+            $("<div>premier dialog </div>").dialog();
         });
         
     });
