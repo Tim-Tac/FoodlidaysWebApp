@@ -137,7 +137,7 @@ $(document).ready(function()
                                     
                                      var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
                                      articles.push(art);
-                                     alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
+                                     alert(tab.name + " ajouté au panier ! ");
                                     }
                                     
                                     else if (tab.quantity <= 0) {
@@ -147,7 +147,7 @@ $(document).ready(function()
                                     else if(existing != 'undefined'){
                                          $( this ).dialog( "close" );
                                         existing.quantity = tab.quantity;
-                                        alert(tab.quantity +"X  :"+ existing.name + " maintenant dans le panier ! ");
+                                        alert(existing.name + " maintenant dans le panier ! ");
                                         
                                     }
                                 }}]
@@ -194,7 +194,12 @@ $(document).ready(function()
     
     
     
+    
+    
+    
+    
     /**********************************************************PANIER CLICK***************************************************************/
+    
     
     $("#panier").click(function(event)
     {
@@ -241,16 +246,18 @@ $(document).ready(function()
         function ConstructOrder(method)
         {
             //first, construct array with foods
-            var foods = new Object();
+            var foods = [];
             
             for(var g = 0 ; g < articles.length ; g ++)
             {
-                foods.id = articles[g].id;
-                foods.quantity = articles[g].quantity;
+                var art = {};
+                art.id = articles[g].id;
+                art.quantity = articles[g].quantity;
+                foods.push(art);
             }
             
             //then, final object order
-            var temp_ord = new Object();
+            var order = {};
             order.type_room = localStorage.place_type;
             order.email = localStorage.user_email;
             order.room_number = localStorage.room_number;
@@ -260,24 +267,81 @@ $(document).ready(function()
             order.country = localStorage.country;
             order.address = localStorage.street_address;
             order.id_user = localStorage.user_id;
-            order.floor = localStorage.floor;
-            order.room = localStorage.room;
             order.plats = foods;
             order.method_payment = method;
             order.language = "fr";
+            if(localStorage.place_type === "place")
+            {
+                order.room = 0;
+                order.floor = 0;
+            }
+            else
+            {
+                order.floor = localStorage.floor;
+                order.room = localStorage.room;
+            }
             
-            var order = JSON.stringify(temp_ord);
+            MakeOrder(order);
+        }
+        
+        
+        
+        function MakeOrder(order)
+        {
+            $.post(
+                "http://foodlidays.dev.innervisiongroup.com/api/v1/order",
+                {  email : document.getElementById("input_email").value, //a remplacer par les valeurs des champs
+                    room_number : document.getElementById("input_room").value },
+                function(data, status)
+                {
+                    localStorage.connected = "true";
+                    localStorage.user_email = data.email;
+                    localStorage.place_type = data.place_type;
+                    localStorage.id = data.room.id;
+                    localStorage.user_id = data.room.user_id;
+                    localStorage.street_address = data.room.street_address;
+                    localStorage.city = data.room.city;
+                    localStorage.country = data.room.country;
+                    localStorage.zip = data.room.zip;
+                    localStorage.room_number = data.room.room_number;
+
+                    if(data.place_type == "place")
+                    {
+                        localStorage.name_place = data.room.name;
+                    }
+                    else if(data.place_type == "room")
+                    {
+                        localStorage.floor = data.room.floor;
+                        localStorage.room = data.room.room;
+                    }
+
+                    window.open("index.html");
+                },
+                "json"
+                ).fail(function() 
+                {
+                    alert( "A network error occured, please check your internet connexion or try again later" );
+                });
             
-            alert(order);
+            
+            
+            
+            
             
         }
+        
+        
         
     });
     
     
     
     
+    
+    
+    
     /************************************************************PROFIL CLICK*****************************************************************/
+    
     
     $("#profil").click(function(event)
     {
@@ -361,8 +425,11 @@ $(document).ready(function()
     
     
     
+    
+    
     /********************************************************* Try for disable back button ********************************************************/
 
+    
     $(window).on("navigate", function (event, data) 
     {
         alert("nav");
