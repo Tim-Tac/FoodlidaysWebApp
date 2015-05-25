@@ -108,7 +108,7 @@ $(document).ready(function()
             orders_list = data;
             if(data.length >= 1)
             {
-                $( "#container" ).append("<div class='orderwrapper'> <span class='orders'> Vos commandes : </span> <br/>");
+                $( "#container" ).append(" <span class='orders'> Vos commandes : </span> <br/> <div class='orderwrapper'>");
                 $( ".orderwrapper" ).append("<table id=\"full_w\" > <tr> <th class='text_left'> Numéro </th> <th class='text_middle'> Passée le </th> <th class='text_right'> Statut </th> </tr>");
             
                 for(var i = 0 ; i<data.length ; i++)
