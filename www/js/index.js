@@ -61,8 +61,6 @@ $(document).ready(function()
         /** 
         **  retrieve food from server 
         **/
-
-        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form>    ");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
@@ -88,21 +86,7 @@ $(document).ready(function()
                         tab.quantity = 0; 
                         
                          $("<div id='id"+tab.id+"'> "+tab.quantity+" </div>").dialog(
-                             {
-
-                             title : "Choisir quantité de " +  tab.name,
-                             buttons: [{
-                             text: "Valider", click: function() 
-                             {   
-                                tab.quantity =  document.getElementById('id'+tab.id).value;
-                                 $( this ).dialog( "close" );
-                                 
-                                 var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
-                                 articles.push(art);
-                                alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
-                                 
-                            }}]
-
+                         {
                             title : "Choisir quantité de " +  tab.name,
                             text: tab.quantity,
                             buttons: [
