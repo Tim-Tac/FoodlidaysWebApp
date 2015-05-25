@@ -2,6 +2,12 @@ $(document).ready(function()
 {
     if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
     
+    var Cat = function(i,n){
+        this.id = i;
+        this.name = n;
+    };
+    var cats = [];
+    
     //define Article object
     var Article = function(n,q,p,i,id) {
         this.name = n;
@@ -19,7 +25,28 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form>    ");
+        //retrieve existing categories
+        $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/category", 
+        function(data) 
+        {
+            for(var c = 0 ; c < data.length ; c++)
+            {
+                var cat = new Cat(data[c].id,data[c].name);
+                cats .push(cat);
+            }
+            alert(cats.length);
+        }
+        ,"json").fail(function()
+        {
+            alert( "A network error occured, please check your internet connexion or try again later" );
+        });
+        
+
+        
+        
+        
+        
+        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form> ");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
@@ -44,9 +71,8 @@ $(document).ready(function()
                         
                         var tab = data[i];
                         tab.quantity = 0;
-                        alert(tab.quantity);
                         
-                         $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
+                         $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" value=\"\" </div>").dialog(
                          {
                              title : "Choisir quantité de " +  tab.name,
                              buttons: [{
@@ -54,17 +80,17 @@ $(document).ready(function()
                              {
                                  //TODO check si pas deja dans la panier, sinon simplement augmenter la quantité
                                  
+                                 alert(document.getElementById("quantity").value);
                                 tab.quantity =  document.getElementById("quantity").value;
                                  $( this ).dialog( "close" );
+                                 
                                  
                                  var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
                                  articles.push(art);
                                 alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
-                                
+                                 
                             }}]
                         });
-                        
-                        
                         
                     }
                 }
