@@ -1,5 +1,7 @@
-+ menu déroulant pour choisir la catégorie
+- enlever bordure tableau dans liste profil (moche)
 
-+ spinner + bouton pour choisir la quantité
+- ajouter dans panier au dessus du bouton commander : le prix total ; le management fee ; une croix (dispo dans les images) pour reset le panier
 
-+ construction de json + passer la commande (et récup le payement)
+- pouvoir modifier / supprimer la quantité d'un article dans le panier
+
+- afficher la liste des articles en fonctions de la catégorie choisie
