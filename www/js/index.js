@@ -140,7 +140,7 @@ $(document).ready(function()
                                      alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
                                     }
                                     
-                                    else if (tab.quantity === 0) {
+                                    else if (tab.quantity <= 0) {
                                         alert("La quantité doit être supérieure à 0");
                                     }
                                     
@@ -181,7 +181,8 @@ $(document).ready(function()
                     cat_sel = cats[f].id;
                 }
             }*/
-        
+           
+            
             alert(str);
             //$("#menu").trigger("click");
             
