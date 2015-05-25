@@ -1,9 +1,4 @@
-# css pour espacer un peu plus verticalement dans la liste du profil
-
-
-- dialog/alert pour demander quantité
-
-- afficher la liste des articles dans le panier
+﻿- dialog/alert pour demander quantité
 
 - interface panier (supprimer/bouton)
 
