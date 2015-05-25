@@ -2,6 +2,12 @@ $(document).ready(function()
 {
     if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
     
+    var Cat = function(i,n){
+        this.id = i;
+        this.name = n;
+    };
+    var cats = [];
+    
     //define Article object
     var Article = function(n,q,p,i,id) {
         this.name = n;
@@ -19,7 +25,42 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form>    ");
+        /**
+        **  retrieve existing categories
+        **/
+        
+        $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/category", 
+        function(data) 
+        {
+            for(var c = 0 ; c < data.length ; c++)
+            {
+                var cat = new Cat(data[c].id,data[c].name);
+                cats .push(cat);
+            }
+        }
+        ,"json").fail(function()
+        {
+            alert( "A network error occured, please check your internet connexion or try again later" );
+        });
+        
+        
+        /**
+        **  fill list with cat
+        **/
+        
+        $("#container").append("<form class=\"categories\"> Catégorie : <select class=\"sel\" id=\"categ\" name=\"cat\" size=\"1\"> <option selected>Toutes ");
+        for (var d = 0 ; d < cats.length ; d ++)
+        {
+            $("#categ").append(" <option> " + cats[d].name +" </select>");
+        }
+        $("#container").append("</form>");
+        
+        
+        
+        
+        /** 
+        **  retrieve food from server 
+        **/
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
@@ -42,7 +83,22 @@ $(document).ready(function()
                     if(id == data[i].id)
                     {     
                         var tab = data[i];
-                        tab.quantity = 0; 
+                        tab.quantity = 0;  
+                        var existing = 0;
+                        
+                        
+                        if(typeof articles[0] != 'undefined')
+                        {
+                            for(var j = 0; j < articles.length; j++)
+                            {
+                                if(articles[j].id == tab.id)
+                                {
+                                    tab.quantity = articles[j].quantity;
+                                    existing = articles[j];
+                                }
+                            }
+                        }
+                        
                         
                          $("<div id='id"+tab.id+"'> "+tab.quantity+" </div>").dialog(
                              {
@@ -69,8 +125,7 @@ $(document).ready(function()
                             text: "Valider",
                             click: function()
                                 {
-                                    
-                                    if(tab.quantity != 0) {
+                                    if(tab.quantity > 0 && existing == 0) {
                                     $( this ).dialog( "close" );
                                     
                                      var art = new Article(tab.name, tab.quantity , tab.price , tab.image , tab.id);
@@ -78,8 +133,15 @@ $(document).ready(function()
                                      alert(tab.quantity +"X  :"+ tab.name + " ajouté au panier ! ");
                                     }
                                     
-                                    else {
+                                    else if (tab.quantity == 0) {
                                         alert("La quantité doit être supérieure à 0");
+                                    }
+                                    
+                                    else if(existing != 'undefined'){
+                                         $( this ).dialog( "close" );
+                                        existing.quantity = tab.quantity;
+                                        alert(tab.quantity +"X  :"+ existing.name + " maintenant dans le panier ! ");
+                                        
                                     }
                                 }}]
                         });
