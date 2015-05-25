@@ -268,7 +268,7 @@ $(document).ready(function()
             order.address = localStorage.street_address;
             order.id_user = localStorage.user_id;
             order.plats = foods;
-            order.method_payment = method;
+            order.method_payement = method;
             order.language = "fr";
             if(localStorage.place_type === "place")
             {
@@ -281,6 +281,7 @@ $(document).ready(function()
                 order.room = localStorage.room;
             }
             
+            console.log(JSON.stringify(order));
             MakeOrder(order);
         }
         
@@ -290,47 +291,20 @@ $(document).ready(function()
         {
             $.post(
                 "http://foodlidays.dev.innervisiongroup.com/api/v1/order",
-                {  email : document.getElementById("input_email").value, //a remplacer par les valeurs des champs
-                    room_number : document.getElementById("input_room").value },
+                { order : order },
                 function(data, status)
                 {
-                    localStorage.connected = "true";
-                    localStorage.user_email = data.email;
-                    localStorage.place_type = data.place_type;
-                    localStorage.id = data.room.id;
-                    localStorage.user_id = data.room.user_id;
-                    localStorage.street_address = data.room.street_address;
-                    localStorage.city = data.room.city;
-                    localStorage.country = data.room.country;
-                    localStorage.zip = data.room.zip;
-                    localStorage.room_number = data.room.room_number;
-
-                    if(data.place_type == "place")
-                    {
-                        localStorage.name_place = data.room.name;
-                    }
-                    else if(data.place_type == "room")
-                    {
-                        localStorage.floor = data.room.floor;
-                        localStorage.room = data.room.room;
-                    }
-
-                    window.open("index.html");
+                    articles = [];
+                   
+                    alert("Vous aller être rediriger vers votre profil pour suivre votre commande");
+                     $("#profil").trigger("click");
                 },
                 "json"
                 ).fail(function() 
                 {
                     alert( "A network error occured, please check your internet connexion or try again later" );
                 });
-            
-            
-            
-            
-            
-            
         }
-        
-        
         
     });
     
