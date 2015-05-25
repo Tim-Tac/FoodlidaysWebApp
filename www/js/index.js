@@ -164,7 +164,6 @@ $(document).ready(function()
         });
         
         
-        
         $( "#categ").change(function () 
         {
             var str = "";
@@ -173,7 +172,7 @@ $(document).ready(function()
               str += $( this ).text();
             });
             
-            for(var f = 0 ; f < cats.length ; f++)
+            /*for(var f = 0 ; f < cats.length ; f++)
             {
                 alert(cats[f].name + " " + str);
                 if(cats[f].name === str) 
@@ -181,10 +180,10 @@ $(document).ready(function()
                     alert(cats[f].id);
                     cat_sel = cats[f].id;
                 }
-            }
+            }*/
         
             alert(str);
-            $("#menu").trigger("click");
+            //$("#menu").trigger("click");
             
         }).change();
         
