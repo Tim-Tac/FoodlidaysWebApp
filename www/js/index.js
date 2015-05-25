@@ -19,7 +19,7 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"10\"> <option selected>Toutes <option> Test </select> </form>    ");
+        $("#container").append("<form> Catégorie : <select name=\"cat\" size=\"1\"> <option selected>Toutes <option> Test </select> </form>    ");
         
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
@@ -41,22 +41,28 @@ $(document).ready(function()
                 {
                     if(id == data[i].id)
                     {
+                        var temp_quantity;
+                        
                          $("<div id=\"Choisissez votre quantité \"> <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\" Quantité désirée\" </div>").dialog(
                          {
                              title : "Choisir quantité de " +  data[i].name,
                              buttons: [{
-                            text: "Valider", click: function() 
-                            {
-                                $( this ).dialog( "close" );
-                                //alert(document.getElementById("quantity").value);
-                                
-                                var art = new Article(data[i].name,document.getElementById("quantity").value,data[i].price,data[i].image,data[i].id);
+                             text: "Valider", click: function() 
+                             {
+                                 //TODO check si pas deja dans la panier, sinon simplement augmenter la quantité
+                                 
+                                temp_quantity =  document.getElementById("quantity").value;
+                                 $( this ).dialog( "close" );
+                                 
+                                 var art = new Article(data[i].name, temp_quantity , data[i].price , data[i].image , data[i].id);
                                 articles.push(art);
-                                //alert(data[i].name + " ajouté au panier ! ");
-                                
+                                alert(data[i].name + " ajouté au panier ! ");
                                 
                             }}]
                         });
+                        
+                        
+                        
                     }
                 }
             });
