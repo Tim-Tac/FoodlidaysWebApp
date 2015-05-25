@@ -19,6 +19,8 @@ $(document).ready(function()
     {
         $("#container").html("");
         
+        $("#container").append(" <label for=\"spinner\">Select a value:</label>");
+        
         $.get( "http://foodlidays.dev.innervisiongroup.com/api/v1/food/cat/all/" + localStorage.zip, 
         function(data) 
         {
@@ -60,20 +62,19 @@ $(document).ready(function()
     {
         $("#container").html("");
         
-        $("#container").append(" <label for=\"spinner\">Select a value:</label>");
-        
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
         {          
-            $("#container").append("<div class='basketwrapper'> <table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th> <tr>");
+            $("#container").append("<div class='basketwrapper'> <table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th>                  <tr>");
             for(var i = 0 ; i < articles.length ; i++)
             {
                   $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+ articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ articles[i].price * articles[i].quantity +" €</td> </tr>");
             }
             $("#container").append("</table> </br></div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
-        }
+        }    
         
-            $('#toOrder').click(function () {
+        
+        $('#toOrder').click(function () {
                 $("<div> Choisissez votre moyen de payement </div>").dialog({
                     title: "Méthode de payement",
                       buttons: [

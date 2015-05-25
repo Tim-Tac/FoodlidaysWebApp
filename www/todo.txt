@@ -1,7 +1,2 @@
-﻿- dialog/alert pour demander quantité
-
-- interface panier (supprimer/bouton)
-
-
 
 ? regarder un moyen pour supprimer le stack des pages pour empêcher de retourner sur les précedantes au bouton précédent du téléphone (menu connexion -> connexion -> liste articles -> précédent -> menu connexion : pas ok !)
