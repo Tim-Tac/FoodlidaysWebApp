@@ -225,9 +225,14 @@ $(document).ready(function()
             $("#container").append("</table> </br></div>");
         
             var st =  0; //faire le total du panier
+            for(k = 0 ; k < articles.length ; k++)
+            {
+                st = st + articles[k].price;
+            }
             var frais = 1.5;
+            var total = parseFloat(st) + parseFloat(frais);
             
-            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + "€ <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
+            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais.toFixed(2) + "€ </br> Total à payer : " + total.toFixed(2) + "€ <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
         /**
