@@ -295,7 +295,8 @@ $(document).ready(function()
                             click: function()
                                 {
                                     articles = articles.slice(x);
-                                    $( this ).dialog( "close" );
+                                    $(this).dialog( "close" );
+                                     $("#panier").trigger("click");
                                 }
                             },
                             {
@@ -304,11 +305,13 @@ $(document).ready(function()
                                 {
                                     tab.quantity = tab.quantity;
                                     alert("Nombre d'articles modifié !");
+                                    $(this).dialog( "close" );
                                     
                                     if(tab.quantity === 0)
                                     {
                                         alert("Article supprimé du panier !");
                                         articles = articles.slice(x);
+                                        $("#panier").trigger("click");
                                     }
                                         
                                 }}]
