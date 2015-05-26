@@ -96,7 +96,6 @@ body
     float: left;
 }
 
-
 /************************************* CSS FOR MENU*************************************/
 
 .missing
@@ -184,9 +183,8 @@ body
     background: #1CB841;
     border: 0;
     cursor: pointer;
-    left: 25%;
-    position: absolute;
-    bottom: 4%;
+    position: relative;
+    margin-top: 25px;
     
 }
 
@@ -211,6 +209,28 @@ body
     height:30px;
 }
 
+.resume 
+{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    position: relative;
+}
+
+.reset
+{
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/reset.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    display: inline-block;
+    left: 80%;
+    position: absolute;
+    top: 60%;
+}
 
 /****************************************** CSS FOR PROFIL ****************************************/
 

@@ -220,7 +220,7 @@ $(document).ready(function()
             var st =  0; //faire le total du panier
             var frais = 1.5;
             
-            $("#container").append(" <div> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + " <img src='../images/reset.png' ></img> </div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
+            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + " <span class='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
         /**
