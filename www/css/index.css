@@ -221,16 +221,17 @@ body
 
 #reset
 {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     background-image: url(../images/reset.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
     display: inline-block;
-    left: 80%;
     position: absolute;
-    top: 60%;
+    top: 45%;
+    float: right;
+    right: -50%;
 }
 
 /****************************************** CSS FOR PROFIL ****************************************/

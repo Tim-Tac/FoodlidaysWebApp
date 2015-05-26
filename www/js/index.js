@@ -165,6 +165,8 @@ $(document).ready(function()
   
                     }
                 }
+                
+                 $( this ).off(e);
             });
             
         }
@@ -322,6 +324,8 @@ $(document).ready(function()
                                         
                                 }}]
                         });
+                
+                        $( this ).off(e);
   
                     }    
         );
