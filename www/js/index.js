@@ -198,13 +198,7 @@ $(document).ready(function()
         }).change();
         
     });
-    
-    
-    
-    
-    
-    
-    
+ 
     
     /**********************************************************PANIER CLICK***************************************************************/
     
@@ -310,6 +304,12 @@ $(document).ready(function()
                                 {
                                     tab.quantity = tab.quantity;
                                     alert("Nombre d'articles modifié !");
+                                    
+                                    if(tab.quantity === 0)
+                                    {
+                                        alert("Article supprimé du panier !");
+                                        articles = articles.slice(x);
+                                    }
                                         
                                 }}]
                         });
