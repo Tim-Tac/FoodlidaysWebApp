@@ -1,5 +1,3 @@
-- enlever bordure tableau dans liste profil (moche)
-
 - ajouter dans panier au dessus du bouton commander : le prix total ; le management fee ; une croix (dispo dans les images) pour reset le panier
 
 - pouvoir modifier / supprimer la quantité d'un article dans le panier

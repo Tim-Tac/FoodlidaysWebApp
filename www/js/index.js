@@ -374,7 +374,7 @@ $(document).ready(function()
                      {
                         toShow = toShow + orders_list[i].foods[j].ordered_quantity + " x " + orders_list[i].foods[j].food_name + "\n";
                       }
-                     toShow = toShow + "------------------------------- \n" + orders_list[i].total_price + "€,  by " + orders_list[i].payment_mode + "\nLe" + orders_list[i].created_at;
+                     toShow = toShow + "------------------------------- \n" + orders_list[i].total_price + "€,  by " + orders_list[i].payment_mode + "\nLe " + orders_list[i].created_at;
                      
                      alert(toShow);
                  }
