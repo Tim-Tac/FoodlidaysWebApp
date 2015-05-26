@@ -1,5 +1,3 @@
-- terminer et centrer au milieu le texte dans le panier + voir pourquoi l'image ne s'affiche pas + reset le panier au toucher de l'image
-
-- pouvoir modifier / supprimer la quantité d'un article dans le panier
+﻿- terminer et centrer au milieu le texte dans le panier + voir pourquoi l'image ne s'affiche pas + reset le panier au toucher de l'image
 
 - afficher la liste des articles en fonctions de la catégorie choisie
