@@ -268,6 +268,7 @@ $(document).ready(function()
                     if(id === articles[x].id)
                     {
                         var tab = articles[x];
+                        var index = x;
                     }
                     
                 }
@@ -299,7 +300,7 @@ $(document).ready(function()
                             text: "Supprimer",
                             click: function()
                                 {
-                                    articles.delete(tab);
+                                    articles = articles.slice(x);
                                     $( this ).dialog( "close" );
                                 }
                             },
