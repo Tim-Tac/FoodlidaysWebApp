@@ -92,6 +92,7 @@ $(document).ready(function()
             
             $(document).on("click", "#productlist tr", function(e)
             { 
+                alert("product list click");
                 
                 var id = $(this).attr('id');
                 
@@ -166,7 +167,7 @@ $(document).ready(function()
                     }
                 }
                 
-                 $( this ).off(e);
+                 //$( this ).off(e);
             });
             
         }
@@ -227,7 +228,7 @@ $(document).ready(function()
             var st =  0; //faire le total du panier
             for(k = 0 ; k < articles.length ; k++)
             {
-                st = st + articles[k].price;
+                st = st + articles[k].price * articles[k].quantity;
             }
             var frais = 1.5;
             var total = parseFloat(st) + parseFloat(frais);
@@ -330,7 +331,7 @@ $(document).ready(function()
                                 }}]
                         });
                 
-                        $( this ).off(e);
+                        //$( this ).off(e);
   
                     }    
         );
@@ -404,7 +405,7 @@ $(document).ready(function()
             }
             
             console.log(JSON.stringify(order));
-            MakeOrder(order);
+            MakeOrder(JSON.stringify(order));
         }
         
         
