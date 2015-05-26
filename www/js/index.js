@@ -90,10 +90,9 @@ $(document).ready(function()
             **  event on click sur une rangée
             **/
             
+            
             $(document).on("click", "#productlist tr", function(e)
-            { 
-                alert("product list click");
-                
+            {                 
                 var id = $(this).attr('id');
                 
                 for(var i = 0; i < data.length; i++)
@@ -170,11 +169,13 @@ $(document).ready(function()
                  //$( this ).off(e);
             });
             
+            
         }
         ,"json").fail(function()
         {
             alert( "A network error occured, please check your internet connexion or try again later" );
         });
+        
         
         
         /**
@@ -199,8 +200,7 @@ $(document).ready(function()
                 }
             }*/
            
-            
-            alert(str);
+            //alert(str);
             //$("#menu").trigger("click");
             
         }).change();
@@ -213,6 +213,9 @@ $(document).ready(function()
     
     $("#panier").click(function(event)
     {
+        //$(document).on("click", "#productlist tr", function(e)
+        $(document).off("click","#productlist tr");
+        
         $("#container").html("");
         
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
