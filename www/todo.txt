@@ -1,4 +1,4 @@
-- ajouter dans panier au dessus du bouton commander : le prix total ; le management fee ; une croix (dispo dans les images) pour reset le panier
+- terminer et centrer au milieu le texte dans le panier + voir pourquoi l'image ne s'affiche pas + reset le panier au toucher de l'image
 
 - pouvoir modifier / supprimer la quantité d'un article dans le panier
 

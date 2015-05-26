@@ -81,6 +81,11 @@ $(document).ready(function()
             
             $( "#container" ).append("</table>");
             
+            
+            /**
+            **  event on click sur une rangée
+            **/
+            
             $(document).on("click", "#productlist tr", function(e)
             { 
                 var id = $(this).attr('id');
@@ -106,7 +111,7 @@ $(document).ready(function()
                             }
                         }
                         
-                        
+                        //dialog pour quantité
                          $("<div id='id"+tab.id+"'> "+tab.quantity+" </div>").dialog(
                          {
                             title : "Choisir quantité de " +  tab.name,
@@ -164,6 +169,10 @@ $(document).ready(function()
         });
         
         
+        /**
+        **  Au changement de catégories
+        **/
+        
         $( "#categ").change(function () 
         {
             var str = "";
@@ -188,7 +197,6 @@ $(document).ready(function()
             
         }).change();
         
-
     });
     
     
@@ -207,15 +215,23 @@ $(document).ready(function()
         
         if(articles.length === 0) $("#container").html("<h2 class=\"any_command\" > Votre panier est vide </h2>");
         else 
-        {          
+        {
             $("#container").append("<div class='basketwrapper'> <table id='basketlist' class=\"basket_table\"> <tr> <th class='image_basket'> Produit </th> <th> Quantité </th> <th> Prix </th> <th> Sous-total </th>                  <tr>");
             for(var i = 0 ; i < articles.length ; i++)
             {
                   $("#basketlist").append("<tr> <td> <img class=\"image_basket\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/"+ articles[i].image+"\"><br/> "+ articles[i].name +"</td> <td> "+            articles[i].quantity +"</td> <td> "+ articles[i].price +" €</td> <td> "+ (articles[i].price * articles[i].quantity).toFixed(2) +" €</td> </tr>");
             }
-            $("#container").append("</table> </br></div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
+            $("#container").append("</table> </br></div>");
+        
+            var st =  0; //faire le total du panier
+            var frais = 1.5;
+            
+            $("#container").append(" <div> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + " <img src=\"../images/reset.png\" ></img> </div> <div> <input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
+        /**
+        **  Quand pousser sur bouton commande
+        **/
         
         $('#toOrder').click(function () 
         {
@@ -235,8 +251,8 @@ $(document).ready(function()
                         text: "Card",
                         click: function() 
                         {
-                            $( this ).dialog( "card");
-                            ConstructOrder("close");
+                            $( this ).dialog( "close");
+                            ConstructOrder("card");
                         }}]
                   });
             
