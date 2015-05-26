@@ -31,6 +31,9 @@ $(document).ready(function()
     
     $("#menu").click(function(event)
     {
+        $(document).off("click","#full_w tr");
+        $(document).off("click","#basketlist tr");
+        
         $("#container").html("");
         
         /**
@@ -215,6 +218,7 @@ $(document).ready(function()
     {
         //$(document).on("click", "#productlist tr", function(e)
         $(document).off("click","#productlist tr");
+        $(document).off("click","#full_w tr");
         
         $("#container").html("");
         
@@ -236,7 +240,7 @@ $(document).ready(function()
             var frais = 1.5;
             var total = parseFloat(st) + parseFloat(frais);
             
-            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais.toFixed(2) + "€ </br> Total à payer : " + total.toFixed(2) + "€ <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
+            $("#container").append(" <div class='resume'> Sous total : " + st.toFixed(2) + "€ </br> Frais de gestion : "+ frais.toFixed(2) + "€ </br> Total à payer : " + total.toFixed(2) + "€ <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
         /**
@@ -440,6 +444,8 @@ $(document).ready(function()
     $("#profil").click(function(event)
     {
         var orders_list;
+        $(document).off("click","#productlist tr");
+        $(document).off("click","#basket tr");
         
         $("#container").html("");
         
