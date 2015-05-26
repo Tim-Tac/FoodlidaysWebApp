@@ -21,10 +21,7 @@ $(document).ready(function()
     };
     var articles = [];
     
-
-    
-    
-    var cat_sel  = "";
+    localStorage.cat = "";
     
     
     /*****************************************************************MENU CLICK*********************************************************************/
@@ -80,7 +77,7 @@ $(document).ready(function()
             
             for(var i = 0 ; i<data.length ; i++)
             {
-                if((cat_sel === data[i].category_id) || cat_sel === "")
+                if((localStorage.cat === data[i].category_id) || (localStorage.cat === ""))
                 {
                     $( "#productlist" ).append("<tr id="+data[i].id+" > <td> <img class=\"image_food\" src=\"http://foodlidays.dev.innervisiongroup.com/uploads/" +data[i].image + "\"></img> </td> <td class=\"to_get\">                      <div>" + data[i].name + "</div><div class='note'> " + data[i].note + " </div> </td>  <td> "  + data[i].price  + "€ </td> </tr>"); 
                 }
@@ -172,7 +169,6 @@ $(document).ready(function()
                     }
                 }
                 
-                 //$( this ).off(e);
             });
             
             
@@ -183,30 +179,30 @@ $(document).ready(function()
         });
         
         
-        
         /**
         **  Au changement de catégories
         **/
         
         $( "#categ").change(function () 
         {
+            //alert("change");
+            
             var str = "";
             $( "select option:selected" ).each(function()
             {
               str += $( this ).text();
             });
+            str = str.trim();
             
-            /*for(var f = 0 ; f < cats.length ; f++)
+            for(var f = 0 ; f < cats.length ; f++)
             {
-                alert(cats[f].name + " " + str);
                 if(cats[f].name === str) 
                 {
-                    alert(cats[f].id);
-                    cat_sel = cats[f].id;
+                    localStorage.cat = cats[f].id;
                 }
-            }*/
-           
-            //alert(str);
+            }
+            
+            $(document).off("click","#productlist tr");
             //$("#menu").trigger("click");
             
         }).change();
@@ -345,8 +341,6 @@ $(document).ready(function()
                                         
                                 }}]
                         });
-                
-                        //$( this ).off(e);
   
                     }    
         );
