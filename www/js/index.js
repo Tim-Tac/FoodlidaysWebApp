@@ -220,7 +220,7 @@ $(document).ready(function()
             var st =  0; //faire le total du panier
             var frais = 1.5;
             
-            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + " <span class='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
+            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + " <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
         /**
@@ -317,8 +317,37 @@ $(document).ready(function()
                                 }}]
                         });
   
-                    }
+                    }    
         );
+        
+                            
+        $('#reset').click(function () 
+        {
+            //dialog pour quantité
+            $("<div> Voulez-vous vraiment supprimer votre panier ? </div>").dialog(
+             {
+                title : "Suppression articles",
+                buttons: [
+                {
+                text: "Supprimer",
+                click: function() 
+                    {
+                        articles = [];
+                        $(this).dialog( "close" );
+                        $("#panier").trigger("click");
+                    }
+                },
+                {
+                text: "Annuler",
+                click: function() 
+                    {
+                        $(this).dialog( "close" );
+                        $("#panier").trigger("click");
+                    }
+                }]
+             });
+            
+        });
                           
         
         function ConstructOrder(method)
@@ -385,12 +414,6 @@ $(document).ready(function()
         }
         
     });
-    
-    
-    
-    
-    
-    
     
     /************************************************************PROFIL CLICK*****************************************************************/
     
