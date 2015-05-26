@@ -220,7 +220,7 @@ $(document).ready(function()
             var st =  0; //faire le total du panier
             var frais = 1.5;
             
-            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + " <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
+            $("#container").append(" <div class='resume'> Sous total : " + st + "€ </br> Frais de gestion : "+ frais + "€ </br> Total à payer : " + (st+frais) + "€ <span id='reset'>  </span> </div> <div><input type=\"button\" id='toOrder' value=\"Commander\"></div>");
         }    
         
         /**
@@ -311,8 +311,9 @@ $(document).ready(function()
                                     {
                                         alert("Article supprimé du panier !");
                                         articles = articles.slice(x);
-                                        $("#panier").trigger("click");
                                     }
+                                    
+                                     $("#panier").trigger("click");
                                         
                                 }}]
                         });
