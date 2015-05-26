@@ -1,3 +1,5 @@
+var js_enabled = 0;
+
 $(document).ready(function() 
 {
     if(localStorage.getItem("connected") === null) window.open("login.html"); //si pas co redirection vers login
@@ -18,6 +20,8 @@ $(document).ready(function()
         this.id = id;
     };
     var articles = [];
+    
+
     
     
     var cat_sel  = "";
@@ -88,6 +92,7 @@ $(document).ready(function()
             
             $(document).on("click", "#productlist tr", function(e)
             { 
+                
                 var id = $(this).attr('id');
                 
                 for(var i = 0; i < data.length; i++)
