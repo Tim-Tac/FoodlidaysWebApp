@@ -163,6 +163,9 @@ $(document).ready(function()
                                         alert(existing.name + " maintenant dans le panier ! ");
                                         
                                     }
+                                    
+                                   $(this).dialog('destroy').remove();
+                                   
                                 }}]
                         });
   
@@ -267,6 +270,8 @@ $(document).ready(function()
                         {
                             $( this ).dialog( "close");
                             ConstructOrder("card");
+                            
+                            $(this).dialog('destroy').remove();
                         }}]
                   });
             
@@ -333,7 +338,10 @@ $(document).ready(function()
                                         articles = articles.slice(x);
                                     }
                                     
-                                     $("#panier").trigger("click");
+                                    $(this).dialog('destroy').remove();
+                                    
+                                    $("#panier").trigger("click");
+                                    
                                         
                                 }}]
                         });
