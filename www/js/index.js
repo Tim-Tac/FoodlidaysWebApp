@@ -22,12 +22,14 @@ $(document).ready(function()
     var articles = [];
     
     localStorage.cat = "";
+    var cpt = 1;
     
     
     /*****************************************************************MENU CLICK*********************************************************************/
     
     $("#menu").click(function(event)
     {
+        menu_launched = 1;
         $(document).off("click","#full_w tr");
         $(document).off("click","#basketlist tr");
         
@@ -58,12 +60,17 @@ $(document).ready(function()
         **/
         
 
-        $("#container").append("<form class=\"categories\"> Catégorie : <select class=\"sel\" id=\"categ\" name=\"cat\" size=\"1\"> <option values\"0\" selected=\"selected\"> Toutes </otpion>");
+        $("#container").append("<form class=\"categories\"> Catégorie : <select class=\"sel\" id=\"categ\" name=\"cat\" size=\"1\"> <option values=\"0\" selected=\"selected\"> Toutes </otpion>");
         for (var d = 0 ; d < cats.length ; d ++)
         {
             $("#categ").append(" <option value=" + cats[d].id + " > " + cats[d].name +" </option> ");
         }
         $("#container").append("</select> </form> <hr class=\"sep\" />");
+        
+        if(localStorage.cat !== "")
+        {
+            $('#categ').val(localStorage.cat);
+        }
         
         
         /** 
@@ -184,26 +191,37 @@ $(document).ready(function()
         **/
         
         $( "#categ").change(function () 
-        {
-            //alert("change");
-            
-            var str = "";
-            $( "select option:selected" ).each(function()
+        {   
+            if((cpt % 2) === 0) 
             {
-              str += $( this ).text();
-            });
-            str = str.trim();
-            
-            for(var f = 0 ; f < cats.length ; f++)
-            {
-                if(cats[f].name === str) 
-                {
-                    localStorage.cat = cats[f].id;
-                }
+                cpt ++;
             }
-            
-            $(document).off("click","#productlist tr");
-            //$("#menu").trigger("click");
+            else
+            {
+                var str = "";
+
+                $( "select option:selected" ).each(function()
+                {
+                  str += $( this ).text();
+                });
+                str = str.trim();
+
+                if(str === "Toutes") localStorage.cat = "";
+                else
+                {
+                    for(var f = 0 ; f < cats.length ; f++)
+                    {
+                        if(cats[f].name === str) 
+                        {
+                            localStorage.cat = cats[f].id;
+                        }
+                    }
+                }
+
+                $(document).off("click","#productlist tr");
+                cpt ++;
+                $("#menu").trigger("click");
+            }
             
         }).change();
         
