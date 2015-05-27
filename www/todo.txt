@@ -1,3 +1,2 @@
-﻿- terminer et centrer au milieu le texte dans le panier + voir pourquoi l'image ne s'affiche pas + reset le panier au toucher de l'image
-
-- afficher la liste des articles en fonctions de la catégorie choisie
+- bugs à  régler :   - la liste des catérogies de charge pas la 1e fois
+                                - les articles sont imprimés  2 fois la première fois
