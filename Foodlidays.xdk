@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "d035a418-5c4b-4116-85ef-ad7609d67eb6",
-      "lastModifiedDate": 1432140471313,
+      "lastModifiedDate": 1432811433899,
       "creationDate": 1432134063291
     },
     "sourceDirectory": "www",
@@ -58,7 +58,32 @@
             "origin": "*"
           }
         ],
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "images/logo_36.png",
+            "density": "ldpi",
+            "height": 36,
+            "width": 36
+          },
+          {
+            "relPath": "images/logo_48.png",
+            "density": "mdpi",
+            "height": 48,
+            "width": 48
+          },
+          {
+            "relPath": "images/logo_72.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          },
+          {
+            "relPath": "images/logo_96.png",
+            "density": "xhdpi",
+            "height": 96,
+            "width": 96
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
@@ -87,7 +112,32 @@
             "origin": "*"
           }
         ],
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "images/logo_36.png",
+            "density": "ldpi",
+            "height": 36,
+            "width": 36
+          },
+          {
+            "relPath": "images/logo_48.png",
+            "density": "mdpi",
+            "height": 48,
+            "width": 48
+          },
+          {
+            "relPath": "images/logo_72.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          },
+          {
+            "relPath": "images/logo_96.png",
+            "density": "xhdpi",
+            "height": 96,
+            "width": 96
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
@@ -115,7 +165,33 @@
             "origin": "*"
           }
         ],
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "images/logo_60.png",
+            "height": 60,
+            "width": 60
+          },
+          {
+            "relPath": "images/logo_76.png",
+            "height": 76,
+            "width": 76
+          },
+          {
+            "relPath": "images/logo_120.png",
+            "height": 120,
+            "width": 120
+          },
+          {
+            "relPath": "images/logo_152.png",
+            "height": 152,
+            "width": 152
+          },
+          {
+            "relPath": "images/logo_180.png",
+            "height": 180,
+            "width": 180
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
@@ -142,7 +218,23 @@
             "origin": "*"
           }
         ],
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "images/logo_30.png",
+            "height": 30,
+            "width": 30
+          },
+          {
+            "relPath": "images/logo_50.png",
+            "height": 50,
+            "width": 50
+          },
+          {
+            "relPath": "images/logo_150.png",
+            "height": 150,
+            "width": 150
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
